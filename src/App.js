@@ -1,25 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { Segment } from 'semantic-ui-react';
+//Components
+import "./assets/semantic/dist/semantic.min.css";
+import Dashboard from "./Home/Dashboard";
+import MainHeader from "./Shared/Navigation/MainHeader";
+import PickUp from "./Parent/PickUp";
+import Routes from "./Bus/Routes";
 
 function App() {
+
     return (
-        <div className="App">
-            <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
+        <Router>
+            <MainHeader />
+            <Switch>
+
+                <Route path="/" exact>
+                    <Segment attached='bottom'>
+                        <Dashboard />
+                    </Segment>
+                </Route>
+
+                <Route path="/parent">
+                    <Segment attached='bottom'>
+                        <PickUp />
+                    </Segment>
+                </Route>
+
+                <Route path="/route">
+                    <Segment attached='bottom'>
+                        <Routes />
+                    </Segment>
+                </Route>
+
+                <Redirect to="/" />
+
+            </Switch>
+        </Router>
     );
 }
 
