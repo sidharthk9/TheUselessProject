@@ -27,7 +27,7 @@ function App() {
                     </Segment>
                 </Route>
 
-                <Route path="/route">
+                <Route path="/routes">
                     <Segment attached='bottom'>
                         <Routes />
                     </Segment>

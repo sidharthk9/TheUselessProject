@@ -6,11 +6,9 @@ import "../assets/semantic/dist/semantic.min.css";
 const Dashboard = () => {
     return(
         <div>
-            <br/>
-            <Container textAlign='center'>
+            <Container textAlign="center">
 
-                <div className="ten wide column">
-                    <Card fluid>
+                    <Card centered>
 
                         <Card.Content>
                             <Card.Header>Welcome!</Card.Header>
@@ -19,13 +17,12 @@ const Dashboard = () => {
                             </Card.Description>
                         </Card.Content>
                         <Card.Content extra>
-                            <a>
-                                <Icon name='user' />
+                            <p>
+                                <Icon name="user" />
                                 ~ .Net + FireBase
-                            </a>
+                            </p>
                         </Card.Content>
                     </Card>
-                </div>
 
             </Container>
         </div>
