@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import { Segment } from 'semantic-ui-react';
+import {Container, Segment} from 'semantic-ui-react';
 //Components
 import "./assets/semantic/dist/semantic.min.css";
 import Dashboard from "./Home/Dashboard";
@@ -16,25 +16,24 @@ function App() {
             <Switch>
 
                 <Route path="/" exact>
-                    <Segment attached='bottom'>
+                    <Container fluid>
                         <Dashboard />
-                    </Segment>
+                    </Container>
                 </Route>
 
                 <Route path="/parent">
-                    <Segment attached='bottom'>
+                    <Container fluid>
                         <PickUp />
-                    </Segment>
+                    </Container>
                 </Route>
 
                 <Route path="/routes">
-                    <Segment attached='bottom'>
+                    <Container fluid>
                         <Routes />
-                    </Segment>
+                    </Container>
                 </Route>
 
                 <Redirect to="/" />
-
             </Switch>
         </Router>
     );

@@ -19,7 +19,6 @@ const center = {
     lat: parseFloat(process.env.REACT_APP_LATITUDE),
     lng: parseFloat(process.env.REACT_APP_LONGITUDE)
 };
-// https://api.what3words.com/v3/convert-to-coordinates?words=shocking.broom.drank&key=DIXXGSPA
 
 
 const Routes = () => {
