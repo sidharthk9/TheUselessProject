@@ -1,6 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import {Container} from 'semantic-ui-react';
+import React from "react";
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import { Container } from "semantic-ui-react";
 //Components
 import "./assets/semantic/dist/semantic.min.css";
 import Dashboard from "./Home/Dashboard";

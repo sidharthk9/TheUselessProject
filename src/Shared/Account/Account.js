@@ -1,9 +1,15 @@
 import React from "react";
-import { Divider, Header, Icon, Reveal, Image, Item, Container, Label } from 'semantic-ui-react';
+import { Divider, Header, Icon, Reveal, Image, Item, Container, Label } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 import ImageModal from "./EditingModals/ImageModal";
 import profileImage from "../../Static/Images/potato.svg";
+import {Link} from "react-router-dom";
+import EmailModal from "./EditingModals/EmailModal";
+import FirstNameModal from "./EditingModals/FirstNameModal";
+import PasswordModal from "./EditingModals/PasswordModal";
+import SurnameModal from "./EditingModals/SurnameModal";
+import PhoneNumberModal from "./EditingModals/PhoneNumberModal";
 
 const Account = () => {
     return(
@@ -32,27 +38,21 @@ const Account = () => {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description>
-                                First Name
-                            </Item.Description>
+                            <Item.Description as={Link} component={ FirstNameModal } />
                             <Item.Meta>Sidharth</Item.Meta>
                         </Item.Content>
                     </Item>
 
                     <Item>
                         <Item.Content>
-                            <Item.Description>
-                                Surname
-                            </Item.Description>
+                            <Item.Description as={Link} component={ SurnameModal } />
                             <Item.Meta>Kishore</Item.Meta>
                         </Item.Content>
                     </Item>
 
                     <Item>
                         <Item.Content>
-                            <Item.Description>
-                                Email
-                            </Item.Description>
+                            <Item.Description as={Link} component={ EmailModal } />
                             <Label color="orange" basic circular>
                                 Unverified
                             </Label>
@@ -64,9 +64,7 @@ const Account = () => {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description>
-                                Phone Number
-                            </Item.Description>
+                            <Item.Description as={Link} component={ PhoneNumberModal } />
                             <Label color="green" basic circular>
                                 Verified
                             </Label>
@@ -78,9 +76,7 @@ const Account = () => {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description>
-                                Password
-                            </Item.Description>
+                            <Item.Description as={Link} component={ PasswordModal } />
                             <Item.Meta>***************</Item.Meta>
                         </Item.Content>
                     </Item>

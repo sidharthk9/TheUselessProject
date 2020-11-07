@@ -1,10 +1,8 @@
-import React from 'react';
-import {Button, Image, Modal} from 'semantic-ui-react';
-import profileImage from "../../../Static/Images/potato.svg";
-import editImage from "../../../Static/Images/edit.svg";
+import React from "react";
+import {Button, Form, Modal} from "semantic-ui-react";
 
 
-function ImageModal() {
+function PasswordModal() {
     const [open, setOpen] = React.useState(false);
 
     return (
@@ -12,21 +10,19 @@ function ImageModal() {
             onClose={ () => setOpen(false) }
             onOpen={ () => setOpen(true) }
             open={ open }
+            closeIcon
+            size={ "tiny" }
             dimmer={ "blurring" }
-            trigger={ <Image src={ editImage } size="small" rounded/> }
+            trigger={ <Button size="medium" color={"white"} basic rounded>Password</Button> }
         >
-            <Modal.Header>Change the Profile Picture?</Modal.Header>
+            <Modal.Header>Change the Password?</Modal.Header>
 
-            <Modal.Content image>
-                <Image size="medium" src={ profileImage } wrapped/>
-                <Modal.Description>
-                    <p>
-                        Please choose a new picture.
-                    </p>
-                    <Button color="yellow">
-                        Insert
-                    </Button>
-                </Modal.Description>
+            <Modal.Content>
+                <Form>
+                    <Form.Input label="Old Password" />
+                    <Form.Input label="New Password" />
+                    <Form.Input label="Confirm Password" />
+                </Form>
             </Modal.Content>
 
             <Modal.Actions>
@@ -35,14 +31,14 @@ function ImageModal() {
                 </Button>
                 <Button
                     content="Confirm"
-                    labelPosition='right'
-                    icon='checkmark'
+                    labelPosition="right"
+                    icon="checkmark"
                     onClick={ () => setOpen(false) }
                     positive
                 />
             </Modal.Actions>
         </Modal>
-    )
+    );
 }
 
-export default ImageModal;
+export default PasswordModal;

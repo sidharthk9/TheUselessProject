@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Image, Modal} from 'semantic-ui-react';
+import {Button, Image, Modal} from "semantic-ui-react";
 import profileImage from "../../../Static/Images/potato.svg";
 import editImage from "../../../Static/Images/edit.svg";
 
@@ -12,6 +12,7 @@ function ImageModal() {
             onClose={ () => setOpen(false) }
             onOpen={ () => setOpen(true) }
             open={ open }
+            closeIcon
             dimmer={ "blurring" }
             trigger={ <Image src={ editImage } size="small" rounded/> }
         >
@@ -35,14 +36,14 @@ function ImageModal() {
                 </Button>
                 <Button
                     content="Confirm"
-                    labelPosition='right'
-                    icon='checkmark'
+                    labelPosition="right"
+                    icon="checkmark"
                     onClick={ () => setOpen(false) }
                     positive
                 />
             </Modal.Actions>
         </Modal>
-    )
+    );
 }
 
 export default ImageModal;
