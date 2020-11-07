@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import {Container, Segment} from 'semantic-ui-react';
+import {Container} from 'semantic-ui-react';
 //Components
 import "./assets/semantic/dist/semantic.min.css";
 import Dashboard from "./Home/Dashboard";
 import MainHeader from "./Shared/Navigation/MainHeader";
 import PickUp from "./Parent/PickUp";
 import Routes from "./Bus/Routes";
+import Account from "./Shared/Account/Account";
 
 function App() {
 
@@ -32,6 +33,13 @@ function App() {
                         <Routes />
                     </Container>
                 </Route>
+
+                <Route path="/account">
+                    <Container fluid>
+                        <Account />
+                    </Container>
+                </Route>
+
 
                 <Redirect to="/" />
             </Switch>
