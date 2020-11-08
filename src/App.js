@@ -9,6 +9,8 @@ import PickUp from "./Parent/PickUp";
 import Routes from "./Bus/Routes";
 import Account from "./Shared/Account/Account";
 import SignUp from "./Shared/Auth/SignUp";
+import LogIn from "./Shared/Auth/LogIn";
+
 
 function App() {
 
@@ -44,6 +46,18 @@ function App() {
                 <Route path="/signup">
                     <Container fluid>
                         <SignUp />
+                    </Container>
+                </Route>
+
+                <Route path="/login">
+                    <Container fluid>
+                        <LogIn />
+                    </Container>
+                </Route>
+
+                <Route path="/exit">
+                    <Container fluid>
+
                     </Container>
                 </Route>
 

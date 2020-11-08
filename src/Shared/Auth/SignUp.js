@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {Card, Image, Button} from "semantic-ui-react";
 // Components
 import "../../assets/semantic/dist/semantic.min.css";
@@ -44,6 +45,9 @@ const SignUp = () => {
                             size="large"
                             label={ { as: "p", basic: true, pointing: "left", content: "Continue?" } }
                             labelPosition="right"
+
+                            as={Link}
+                            to="/login"
                         />
 
                     </Button.Group>
