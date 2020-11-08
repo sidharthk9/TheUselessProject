@@ -1,8 +1,9 @@
 import React from "react";
-import {Card, Image, Form, Button, Segment} from "semantic-ui-react";
+import { Card, Image, Form, Button, Segment } from "semantic-ui-react";
 // Components
 import "../../assets/semantic/dist/semantic.min.css";
 import logo from "../../Static/Images/logo.jpeg"
+import ForgotPasswordModal from "./Modals/ForgotPasswordModal";
 
 
 const LogIn = () => {
@@ -32,16 +33,20 @@ const LogIn = () => {
                 <Card.Content extra textAlign={ "center" }>
                     <Segment inverted>
                         <Form inverted>
+
                             <Form.Group widths="equal">
                                 <Form.Input fluid label="Email" />
                                 <Form.Input fluid label="Password" />
                             </Form.Group>
                             <Form.Checkbox label="Stay Logged In" />
+
                             <Button
                                 content="Log In"
                                 color="blue"
                                 size="large"
                             />
+                            <ForgotPasswordModal />
+
                         </Form>
                     </Segment>
                 </Card.Content>

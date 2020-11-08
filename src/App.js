@@ -19,30 +19,6 @@ function App() {
             <MainHeader />
             <Switch>
 
-                <Route path="/" exact>
-                    <Container fluid>
-                        <Dashboard />
-                    </Container>
-                </Route>
-
-                <Route path="/parent">
-                    <Container fluid>
-                        <PickUp />
-                    </Container>
-                </Route>
-
-                <Route path="/routes">
-                    <Container fluid>
-                        <Routes />
-                    </Container>
-                </Route>
-
-                <Route path="/account">
-                    <Container fluid>
-                        <Account />
-                    </Container>
-                </Route>
-
                 <Route path="/signup">
                     <Container fluid>
                         <SignUp />
@@ -61,7 +37,31 @@ function App() {
                     </Container>
                 </Route>
 
-                <Redirect to="/" />
+                <Route path="/" exact>
+                    <Container fluid>
+                        <Dashboard />
+                    </Container>
+                </Route>
+
+                <Route path="/account">
+                    <Container fluid>
+                        <Account />
+                    </Container>
+                </Route>
+
+                <Route path="/parent">
+                    <Container fluid>
+                        <PickUp />
+                    </Container>
+                </Route>
+
+                <Route path="/routes">
+                    <Container fluid>
+                        <Routes />
+                    </Container>
+                </Route>
+
+                <Redirect to="/signup" />
             </Switch>
         </Router>
     );
