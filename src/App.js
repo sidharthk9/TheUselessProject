@@ -8,6 +8,7 @@ import MainHeader from "./Shared/Navigation/MainHeader";
 import PickUp from "./Parent/PickUp";
 import Routes from "./Bus/Routes";
 import Account from "./Shared/Account/Account";
+import SignUp from "./Shared/Auth/SignUp";
 
 function App() {
 
@@ -40,6 +41,11 @@ function App() {
                     </Container>
                 </Route>
 
+                <Route path="/signup">
+                    <Container fluid>
+                        <SignUp />
+                    </Container>
+                </Route>
 
                 <Redirect to="/" />
             </Switch>
