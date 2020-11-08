@@ -10,6 +10,7 @@ import Routes from "./Driver/Routes";
 import Account from "./Shared/Account/Account";
 import SignUp from "./Shared/Auth/SignUp";
 import LogIn from "./Shared/Auth/LogIn";
+import RegisterStudent from "./Parent/RegisterStudent";
 
 
 function App() {
@@ -45,6 +46,12 @@ function App() {
                 <Route path="/account">
                     <Container fluid>
                         <Account />
+                    </Container>
+                </Route>
+
+                <Route path="/registerstudent">
+                    <Container fluid>
+                        <RegisterStudent />
                     </Container>
                 </Route>
 

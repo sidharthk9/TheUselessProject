@@ -11,7 +11,7 @@ const MainNavigation = () => {
         <Dropdown.Menu>
 
             <Dropdown.Item as={Link} to="/">Home</Dropdown.Item>
-            <Dropdown.Item as={Link} to="/parent">Pick Up</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/registerstudent">Register Student</Dropdown.Item>
             <Dropdown.Item as={Link} to="/routes">Routes</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Header>Settings</Dropdown.Header>
@@ -19,6 +19,7 @@ const MainNavigation = () => {
             <Dropdown.Item as={Link} to="/login">Log In</Dropdown.Item>
             <Dropdown.Item as={Link} to="/signup">Sign Up</Dropdown.Item>
             <Dropdown.Item as={Link} component={ LogOut }>Log Out</Dropdown.Item>
+
 
         </Dropdown.Menu>
     );

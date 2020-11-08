@@ -11,9 +11,9 @@ const PickUp = () => {
 
     const getLocation = useCallback(() => {
         navigator.geolocation.getCurrentPosition( (position) => {
-            return ({ lat: position.coords.latitude, lng: position.coords.longitude});
-        },
-            ()=> null);
+                return ({ lat: position.coords.latitude, lng: position.coords.longitude});
+            }, ()=> null
+        );
     }, []);
 
     const initializeWords = useCallback(() => {
