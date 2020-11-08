@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Card, Icon } from 'semantic-ui-react';
 //Components
-import "../assets/semantic/dist/semantic.min.css";
+import "../../assets/semantic/dist/semantic.min.css";
 
 const Dashboard = () => {
     return(
@@ -11,15 +11,15 @@ const Dashboard = () => {
                     <Card centered>
 
                         <Card.Content>
-                            <Card.Header>Welcome!</Card.Header>
+                            <Card.Header>Dashboard</Card.Header>
                             <Card.Description>
-                                Prototype of the SD Project
+                                Other Features TBA
                             </Card.Description>
                         </Card.Content>
                         <Card.Content extra>
                             <p>
-                                <Icon name="user" />
-                                ~ .Net + FireBase
+                                <Icon name="code" />
+                                Node.Js + Firebase
                             </p>
                         </Card.Content>
                     </Card>

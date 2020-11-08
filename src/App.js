@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-d
 import { Container } from "semantic-ui-react";
 //Components
 import "./assets/semantic/dist/semantic.min.css";
-import Dashboard from "./Home/Dashboard";
+import Dashboard from "./Shared/Dashboard/Dashboard";
 import MainHeader from "./Shared/Navigation/MainHeader";
 import PickUp from "./Parent/PickUp";
-import Routes from "./Bus/Routes";
+import Routes from "./Driver/Routes";
 import Account from "./Shared/Account/Account";
 import SignUp from "./Shared/Auth/SignUp";
 import LogIn from "./Shared/Auth/LogIn";
@@ -33,7 +33,6 @@ function App() {
 
                 <Route path="/exit">
                     <Container fluid>
-
                     </Container>
                 </Route>
 

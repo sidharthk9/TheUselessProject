@@ -4,6 +4,7 @@ import { Card, Image, Form, Button, Segment } from "semantic-ui-react";
 import "../../assets/semantic/dist/semantic.min.css";
 import logo from "../../Static/Images/logo.jpeg"
 import ForgotPasswordModal from "./Modals/ForgotPasswordModal";
+import {Link} from "react-router-dom";
 
 
 const LogIn = () => {
@@ -44,6 +45,9 @@ const LogIn = () => {
                                 content="Log In"
                                 color="blue"
                                 size="large"
+
+                                as={ Link }
+                                to="/"
                             />
                             <ForgotPasswordModal />
 
