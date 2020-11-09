@@ -4,6 +4,7 @@ import { Dropdown } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 import LogOut from "../Auth/LogOut";
+import ChangeDrop from "../../Parent/Modals/ChangeDrop";
 
 
 const MainNavigation = () => {
@@ -13,7 +14,9 @@ const MainNavigation = () => {
             <Dropdown.Item as={Link} to="/">Home</Dropdown.Item>
             <Dropdown.Item as={Link} to="/registerstudent">Register Student</Dropdown.Item>
             <Dropdown.Item as={Link} to="/dropoff">Drop Student</Dropdown.Item>
+            <Dropdown.Item as={Link} component={ ChangeDrop } >Change Location</Dropdown.Item>
             <Dropdown.Item as={Link} to="/mapselection">Map Selection</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/arrival">Arrival Time</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Header>Settings</Dropdown.Header>
             <Dropdown.Item as={Link} to="/account">Account</Dropdown.Item>

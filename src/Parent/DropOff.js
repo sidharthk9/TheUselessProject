@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import { Button, Card } from "semantic-ui-react";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
-import CurrentLocationButton from "./CurrentLocationButton";
+import CurrentLocationButton from "./Modals/CurrentLocationButton";
 
 
 const DropOff = () => {

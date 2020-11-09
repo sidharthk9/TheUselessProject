@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { Button, Modal } from "semantic-ui-react";
 import axios from "axios";
 //Components
-import "../assets/semantic/dist/semantic.min.css";
+import "../../assets/semantic/dist/semantic.min.css";
 import {Link} from "react-router-dom";
 
 
