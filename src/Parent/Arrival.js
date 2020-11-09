@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Container, Card, Icon, Button, Segment} from 'semantic-ui-react';
+import {Container, Card, Button, Segment} from 'semantic-ui-react';
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 import {Link} from "react-router-dom";
@@ -31,19 +31,27 @@ const Arrival = () => {
                             to="/"
                         />
                         <Button
-                        inverted
-                        negative
-                        content="Possible Delay"
-                        labelPosition="right"
-                        icon="question"
-                    />
-                    <Button
-                        inverted
-                        negative
-                        content="Detour"
-                        labelPosition="right"
-                        icon="remove"
-                    />
+                            basic
+                            inverted
+                            color="orange"
+                            content="Possible Delay"
+                            labelPosition="right"
+                            icon="question"
+
+                            as={ Link }
+                            to="/tracking"
+                        />
+                        <Button
+                            basic
+                            inverted
+                            color="red"
+                            content="Detour"
+                            labelPosition="right"
+                            icon="remove"
+
+                            as={ Link }
+                            to="/tracking"
+                        />
                     </Segment>
                 </Card.Content>
             </Card>

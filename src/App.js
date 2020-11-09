@@ -10,8 +10,9 @@ import Account from "./Shared/Account/Account";
 import SignUp from "./Shared/Auth/SignUp";
 import LogIn from "./Shared/Auth/LogIn";
 import RegisterStudent from "./Parent/RegisterStudent";
-import MapLocationSelection from "./Parent/MapSelection";
+import MapSelection from "./Parent/MapSelection";
 import Arrival from "./Parent/Arrival";
+import Tracking from "./Parent/Tracking";
 
 
 function App() {
@@ -64,13 +65,19 @@ function App() {
 
                 <Route path="/mapselection">
                     <Container fluid>
-                        <MapLocationSelection />
+                        <MapSelection />
                     </Container>
                 </Route>
 
                 <Route path="/arrival">
                     <Container fluid>
                         <Arrival />
+                    </Container>
+                </Route>
+
+                <Route path="/tracking">
+                    <Container fluid>
+                        <Tracking />
                     </Container>
                 </Route>
 
