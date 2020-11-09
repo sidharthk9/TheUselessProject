@@ -10,31 +10,54 @@ import "@reach/combobox/styles.css";
 import "../assets/semantic/dist/semantic.min.css";
 
 //Parameters
+const locationOptions = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
 const libraries = ["places"];
 const mapStyle = {
     width: "80vw",
     height: "400px"
 };
-const center = {
-    lat: parseFloat(process.env.REACT_APP_LATITUDE),
-    lng: parseFloat(process.env.REACT_APP_LONGITUDE)
-};
+let center = {};
+
+navigator.geolocation.getCurrentPosition(
+    (position) => {
+        //Successful process
+        center = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+    },
+    (error) => {
+        //Error process
+        alert("Location Error");
+        console.warn(`Error(${error.code}): ${error.message}`);
+    },
+    locationOptions
+);
 
 
-const Routes = () => {
+const TempLocation = () => {
 
+    //Google Maps Prerequisite
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries
     });
 
-    const [locations, addLocation] = useState([]);
+    const [locations, addLocation] = useState(null);
     const [selected, selectLocation] = useState(null);
     const [decoWords, createWords] = useState(null);
 
+    //Map Container
     const mapRef = useRef();
+
+
     const onMapLoad = useCallback( (map) => {
         mapRef.current = map;
+
     }, []);
 
     const panTo = useCallback(( { lat, lng } ) => {
@@ -42,6 +65,8 @@ const Routes = () => {
         mapRef.current.setZoom(14);
     }, []);
 
+
+    //Treats the location state as an array and appends a new selection into it.
     const locationAdder = useCallback((event) => {
         addLocation((currentLocations) => [
             ...currentLocations,
@@ -53,13 +78,13 @@ const Routes = () => {
         ]);
     }, []);
 
+
     const createDecorativeWords = useCallback((lat, lng) => {
-        let apiWords = "---";
         const apiKey = process.env.REACT_APP_WHAT_THREE_WORDS;
 
         axios.get(`https://api.what3words.com/v3/convert-to-3wa?coordinates=${lat}%2C${lng}&key=${apiKey}`)
             .then(function (response) {
-                apiWords = response.data.words;
+                const apiWords = response.data.words;
                 createWords(apiWords);
             });
 
@@ -72,27 +97,27 @@ const Routes = () => {
     return(
         <Container textAlign="center">
             <Search panTo={ panTo } />
-            <Locate panTo={ panTo } />
             <GoogleMap
+                onLoad={ onMapLoad }
                 mapContainerStyle={ mapStyle }
                 zoom={ 12 }
                 center={ center }
                 onClick={ locationAdder }
-                onLoad={ onMapLoad }
             >
-                {
-                    locations.map( (location) => <Marker
-                        key={ location.time.toISOString() }
-                        position={ { lat: location.lat, lng: location.lng } }
-                        icon={ {
-                            scaledSize: new window.google.maps.Size(20,20),
-                            origin: new window.google.maps.Point(0,0),
-                            anchor: new window.google.maps.Point(15,15)
-                        } }
-                        onClick={ () => {
-                            selectLocation(location);
-                        } }
-                    /> )
+                { locations ?
+                    (<Marker
+                        key={locations.time.toISOString()}
+                        position={{lat: locations.lat, lng: locations.lng}}
+                        icon={{
+                            scaledSize: new window.google.maps.Size(20, 20),
+                            origin: new window.google.maps.Point(0, 0),
+                            anchor: new window.google.maps.Point(15, 15)
+                        }}
+                        onClick={() => {
+                            selectLocation(locations);
+                        }}
+                    />)
+                    : null
                 }
                 {
                     selected ? ( <InfoWindow
@@ -111,23 +136,6 @@ const Routes = () => {
                 }
             </GoogleMap>
         </Container>
-    );
-}
-
-const Locate = ({ panTo }) => {
-    return (
-        <Button
-            secondary
-            icon
-            onClick={ () => {
-            navigator.geolocation.getCurrentPosition( (position) => {
-                panTo({ lat: position.coords.latitude, lng: position.coords.longitude});
-                console.log({ lat: position.coords.latitude, lng: position.coords.longitude});
-            }, ()=> null);
-        } }>
-            <Icon name='world' />
-            Retrieve
-        </Button>
     );
 }
 
@@ -184,4 +192,4 @@ function Search ({ panTo }) {
     );
 }
 
-export default Routes;
+export default TempLocation;

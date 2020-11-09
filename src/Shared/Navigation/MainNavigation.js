@@ -12,14 +12,14 @@ const MainNavigation = () => {
 
             <Dropdown.Item as={Link} to="/">Home</Dropdown.Item>
             <Dropdown.Item as={Link} to="/registerstudent">Register Student</Dropdown.Item>
-            <Dropdown.Item as={Link} to="/routes">Routes</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/dropoff">Drop Student</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/mapselection">Map Selection</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Header>Settings</Dropdown.Header>
             <Dropdown.Item as={Link} to="/account">Account</Dropdown.Item>
             <Dropdown.Item as={Link} to="/login">Log In</Dropdown.Item>
             <Dropdown.Item as={Link} to="/signup">Sign Up</Dropdown.Item>
             <Dropdown.Item as={Link} component={ LogOut }>Log Out</Dropdown.Item>
-
 
         </Dropdown.Menu>
     );

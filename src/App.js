@@ -5,12 +5,12 @@ import { Container } from "semantic-ui-react";
 import "./assets/semantic/dist/semantic.min.css";
 import Dashboard from "./Shared/Dashboard/Dashboard";
 import MainHeader from "./Shared/Navigation/MainHeader";
-import PickUp from "./Parent/PickUp";
-import Routes from "./Driver/Routes";
+import DropOff from "./Parent/DropOff";
 import Account from "./Shared/Account/Account";
 import SignUp from "./Shared/Auth/SignUp";
 import LogIn from "./Shared/Auth/LogIn";
 import RegisterStudent from "./Parent/RegisterStudent";
+import MapLocationSelection from "./Parent/MapLocationSelection";
 
 
 function App() {
@@ -55,15 +55,15 @@ function App() {
                     </Container>
                 </Route>
 
-                <Route path="/parent">
+                <Route path="/dropoff">
                     <Container fluid>
-                        <PickUp />
+                        <DropOff />
                     </Container>
                 </Route>
 
-                <Route path="/routes">
+                <Route path="/mapselection">
                     <Container fluid>
-                        <Routes />
+                        <MapLocationSelection />
                     </Container>
                 </Route>
 

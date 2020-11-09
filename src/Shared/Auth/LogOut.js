@@ -12,7 +12,7 @@ const LogOut = () => {
         <Modal
             closeIcon
             open={ open }
-            trigger={ <Button color="white" fluid>Log Out</Button> }
+            trigger={ <Button color="grey" fluid>Log Out</Button> }
             onClose={ () => setOpen(false) }
             onOpen={ () => setOpen(true) }
         >
