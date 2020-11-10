@@ -8,7 +8,7 @@ import ParentDetailsModal from "./Modals/ParentDetailsModal";
 
 
 const RegisteredParents = () => (
-    <Card centered color="pink">
+    <Card centered color="pink" fluid>
         <Table padded celled size="large" textAlign="center" selectable>
             <Table.Header>
 

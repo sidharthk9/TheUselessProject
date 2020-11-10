@@ -15,6 +15,7 @@ import Arrival from "./Parent/Arrival";
 import Tracking from "./Parent/Tracking";
 import Routes from "./Driver/Routes";
 import RegisteredParents from "./School/RegisteredParents";
+import BusPersonnel from "./School/BusPersonnel";
 
 
 const App = () => {
@@ -92,6 +93,12 @@ const App = () => {
                 <Route path="/registeredparents">
                     <Container fluid>
                         <RegisteredParents />
+                    </Container>
+                </Route>
+
+                <Route path="/buspersonnel">
+                    <Container fluid>
+                        <BusPersonnel />
                     </Container>
                 </Route>
 
