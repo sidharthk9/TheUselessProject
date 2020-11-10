@@ -14,9 +14,10 @@ import MapSelection from "./Parent/MapSelection";
 import Arrival from "./Parent/Arrival";
 import Tracking from "./Parent/Tracking";
 import Routes from "./Driver/Routes";
+import RegisteredParents from "./School/RegisteredParents";
 
 
-function App() {
+const App = () => {
 
     return (
         <Router>
@@ -85,6 +86,12 @@ function App() {
                 <Route path="/routes">
                     <Container fluid>
                         <Routes />
+                    </Container>
+                </Route>
+
+                <Route path="/registeredparents">
+                    <Container fluid>
+                        <RegisteredParents />
                     </Container>
                 </Route>
 

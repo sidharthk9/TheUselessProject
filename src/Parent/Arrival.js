@@ -31,6 +31,16 @@ const Arrival = () => {
                             to="/"
                         />
                         <Button
+                            inverted
+                            color="olive"
+                            content="On Route"
+                            labelPosition="right"
+                            icon="bus"
+
+                            as={ Link }
+                            to="/tracking"
+                        />
+                        <Button
                             basic
                             inverted
                             color="orange"
