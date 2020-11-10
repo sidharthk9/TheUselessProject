@@ -13,6 +13,7 @@ import RegisterStudent from "./Parent/RegisterStudent";
 import MapSelection from "./Parent/MapSelection";
 import Arrival from "./Parent/Arrival";
 import Tracking from "./Parent/Tracking";
+import Routes from "./Driver/Routes";
 
 
 function App() {
@@ -78,6 +79,12 @@ function App() {
                 <Route path="/tracking">
                     <Container fluid>
                         <Tracking />
+                    </Container>
+                </Route>
+
+                <Route path="/routes">
+                    <Container fluid>
+                        <Routes />
                     </Container>
                 </Route>
 

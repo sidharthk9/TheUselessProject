@@ -16,7 +16,7 @@ const LogOut = () => {
             onClose={ () => setOpen(false) }
             onOpen={ () => setOpen(true) }
         >
-            <Header icon="archive" content="Log Out" />
+            <Header icon={"sign out"} content="Log Out" />
             <Modal.Content>
                 <p>
                     Are you sure about logging out?

@@ -18,6 +18,7 @@ const MainNavigation = () => {
             <Dropdown.Item as={Link} to="/mapselection">Map Selection</Dropdown.Item>
             <Dropdown.Item as={Link} to="/arrival">Arrival Time</Dropdown.Item>
             <Dropdown.Item as={Link} to="/tracking">Bus Tracking</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/routes">Routes</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Header>Settings</Dropdown.Header>
             <Dropdown.Item as={Link} to="/account">Account</Dropdown.Item>
