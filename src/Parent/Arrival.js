@@ -35,7 +35,7 @@ const Arrival = () => {
                             color="olive"
                             content="On Route"
                             labelPosition="right"
-                            icon="bus"
+                            icon="hourglass half"
 
                             as={ Link }
                             to="/tracking"
@@ -43,7 +43,7 @@ const Arrival = () => {
                         <Button
                             basic
                             inverted
-                            color="orange"
+                            color="yellow"
                             content="Possible Delay"
                             labelPosition="right"
                             icon="question"
@@ -54,7 +54,7 @@ const Arrival = () => {
                         <Button
                             basic
                             inverted
-                            color="red"
+                            color="orange"
                             content="Detour"
                             labelPosition="right"
                             icon="remove"

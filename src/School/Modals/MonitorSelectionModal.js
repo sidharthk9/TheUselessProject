@@ -19,10 +19,10 @@ const MonitorSelectionModal = () => {
             dimmer={ "blurring" }
             trigger={
                 <Button
-                    basic
-                    content= { monitorName }
-                    color="olive"
+                    inverted
+                    color="green"
                     size="medium"
+                    content= { monitorName }
                 />
             }
         >

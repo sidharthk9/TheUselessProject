@@ -15,7 +15,8 @@ import Arrival from "./Parent/Arrival";
 import Tracking from "./Parent/Tracking";
 import Routes from "./Driver/Routes";
 import RegisteredParents from "./School/RegisteredParents";
-import BusPersonnel from "./School/BusPersonnel";
+import PersonnelSelection from "./School/PersonnelSelection";
+import FleetTracking from "./School/FleetTracking";
 
 
 const App = () => {
@@ -96,9 +97,15 @@ const App = () => {
                     </Container>
                 </Route>
 
-                <Route path="/buspersonnel">
+                <Route path="/personnelselection">
                     <Container fluid>
-                        <BusPersonnel />
+                        <PersonnelSelection />
+                    </Container>
+                </Route>
+
+                <Route path="/fleettracking">
+                    <Container fluid>
+                        <FleetTracking />
                     </Container>
                 </Route>
 

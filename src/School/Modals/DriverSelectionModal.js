@@ -19,10 +19,10 @@ const DriverSelectionModal = () => {
             dimmer={ "blurring" }
             trigger={
                 <Button
-                    basic
-                    content= { driverName }
+                    inverted
                     color="olive"
                     size="medium"
+                    content= { driverName }
                 />
             }
         >

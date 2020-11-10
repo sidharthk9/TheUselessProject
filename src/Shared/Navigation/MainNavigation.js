@@ -20,7 +20,8 @@ const MainNavigation = () => {
             <Dropdown.Item as={Link} to="/tracking">Bus Tracking</Dropdown.Item>
             <Dropdown.Item as={Link} to="/routes">Routes</Dropdown.Item>
             <Dropdown.Item as={Link} to="/registeredparents">Registered Parents</Dropdown.Item>
-            <Dropdown.Item as={Link} to="/buspersonnel">Bus Personnel</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/personnelselection">Personnel Selection</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/fleettracking">Fleet Tracking</Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Header>Settings</Dropdown.Header>
             <Dropdown.Item as={Link} to="/account">Account</Dropdown.Item>
