@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Modal, Form } from "semantic-ui-react";
 
 
-function EmailModal() {
+const EmailModal = () => {
     const [open, setOpen] = React.useState(false);
 
     return (

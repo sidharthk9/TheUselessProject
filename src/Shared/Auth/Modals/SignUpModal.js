@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Divider, Form, Modal} from "semantic-ui-react";
+import { Button, Divider, Form, Modal } from "semantic-ui-react";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
 

@@ -1,8 +1,9 @@
 import React from "react";
 import {Button, Form, Modal} from "semantic-ui-react";
+//Components
+import "../../../assets/semantic/dist/semantic.min.css";
 
-
-function PhoneNumberModal() {
+const PhoneNumberModal = () => {
     const [open, setOpen] = React.useState(false);
 
     return (

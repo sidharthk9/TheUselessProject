@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Form, Modal } from "semantic-ui-react";
 
 
-function FirstNameModal() {
+const FirstNameModal = () => {
     const [open, setOpen] = React.useState(false);
 
     return (

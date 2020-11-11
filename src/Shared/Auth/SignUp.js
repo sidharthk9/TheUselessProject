@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {Card, Image, Button} from "semantic-ui-react";
+import { Card, Image, Button } from "semantic-ui-react";
 // Components
 import "../../assets/semantic/dist/semantic.min.css";
 import logo from "../../Static/Images/logo.jpeg"

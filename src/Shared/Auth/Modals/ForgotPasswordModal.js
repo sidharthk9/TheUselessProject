@@ -1,6 +1,8 @@
 import React from "react";
 import { Button, Modal, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+//Components
+import "../../../assets/semantic/dist/semantic.min.css";
 
 
 const ForgotPasswordModal = () => {
@@ -44,7 +46,7 @@ const ForgotPasswordModal = () => {
                     onClick={ () => setOpen(false) }
                     positive
 
-                    as={Link}
+                    as={ Link }
                     to="/signup"
                 />
             </Modal.Actions>

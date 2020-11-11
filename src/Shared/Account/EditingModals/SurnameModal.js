@@ -1,8 +1,10 @@
 import React from "react";
-import {Button, Form, Modal} from "semantic-ui-react";
+import { Button, Form, Modal } from "semantic-ui-react";
+//Components
+import "../../../assets/semantic/dist/semantic.min.css";
 
 
-function SurnameModal() {
+const SurnameModal = () => {
     const [open, setOpen] = React.useState(false);
 
     return (

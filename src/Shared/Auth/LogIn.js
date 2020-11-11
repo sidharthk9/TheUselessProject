@@ -1,10 +1,10 @@
 import React from "react";
 import { Card, Image, Form, Button, Segment } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 // Components
 import "../../assets/semantic/dist/semantic.min.css";
 import logo from "../../Static/Images/logo.jpeg"
 import ForgotPasswordModal from "./Modals/ForgotPasswordModal";
-import {Link} from "react-router-dom";
 
 
 const LogIn = () => {
