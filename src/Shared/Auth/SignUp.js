@@ -7,7 +7,9 @@ import logo from "../../Static/Images/logo.jpeg"
 import SignUpModal from "./Modals/SignUpModal";
 
 
+
 const SignUp = () => {
+
     return(
         <Card.Group itemsPerRow={1}>
 
