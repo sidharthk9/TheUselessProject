@@ -1,9 +1,30 @@
 import React from "react";
-import { Button, Form, Modal } from "semantic-ui-react";
+import {Button, Form, Label, Modal} from "semantic-ui-react";
+import { useFormik } from "formik";
+//Components
+import "../../../assets/semantic/dist/semantic.min.css";
 
 
 const FirstNameModal = () => {
     const [open, setOpen] = React.useState(false);
+
+    const firstNameEditForm = useFormik({
+        initialValues: {
+            firstName: ""
+        },
+        validate: (values) => {
+            let errors = {};
+
+            if(!values.firstName){ errors.firstName = "Field is Required"; }
+
+            return errors;
+        },
+        onSubmit: (values) => { firstNameEditing(values) }
+    });
+
+    const firstNameEditing = (values) => {
+        alert(JSON.stringify(values, null, 2) );
+    };
 
     return (
         <Modal
@@ -13,13 +34,38 @@ const FirstNameModal = () => {
             closeIcon
             size={ "tiny" }
             dimmer={ "blurring" }
-            trigger={ <Button size="medium" color={"white"} basic rounded>First Name</Button> }
+            trigger={
+                <Button
+                    size="medium"
+                    color="white"
+                    basic
+                    rounded
+                    content="First Name"
+                />
+            }
         >
             <Modal.Header>Change the Name?</Modal.Header>
 
             <Modal.Content>
-                <Form>
-                    <Form.Input label="New Name" placeholder="John" />
+                <Form onSubmit={ firstNameEditForm.handleSubmit }>
+                    { ( firstNameEditForm.touched.firstName && firstNameEditForm.errors.firstName )
+                        ? <Label pointing="below" prompt content={ firstNameEditForm.errors.firstName } />
+                        : null
+                    }
+                    <Form.Input
+                        label="New Name"
+                        id="firstName"
+                        placeholder="John"
+                        value={ firstNameEditForm.values.firstName }
+                        onBlur={ firstNameEditForm.handleBlur }
+                        onChange={ firstNameEditForm.handleChange }
+                    />
+                    <Form.Button
+                        type="submit"
+                        content="Submit"
+                        color="olive"
+                        size="large"
+                    />
                 </Form>
             </Modal.Content>
 

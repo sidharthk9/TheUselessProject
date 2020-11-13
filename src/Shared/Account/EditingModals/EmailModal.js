@@ -37,7 +37,7 @@ const EmailModal = () => {
             trigger={
                 <Button
                     size="medium"
-                    color={"white"}
+                    color="white"
                     basic
                     rounded
                     content="Email"
