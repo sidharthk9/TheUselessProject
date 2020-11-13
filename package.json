@@ -12,6 +12,7 @@
     "date-fns": "^2.16.1",
     "firebase": "^7.24.0",
     "fomantic-ui": "^2.8.7",
+    "formik": "^2.2.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

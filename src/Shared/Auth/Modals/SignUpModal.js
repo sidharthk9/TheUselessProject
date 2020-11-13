@@ -1,5 +1,6 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Button, Divider, Form, Modal } from "semantic-ui-react";
+import React, { useState, useEffect } from "react";
+import { Button, Divider, Form, Modal, Label } from "semantic-ui-react";
+import { useFormik, Formik, Form as FormTag, Field, ErrorMessage  } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
 import firebase from "../../Firebase/FirebaseConfig";
@@ -7,19 +8,48 @@ import firebase from "../../Firebase/FirebaseConfig";
 
 const SignUpModal = () => {
     const [open, setOpen] = useState(false);
-    const [firstName, updateFirstName] = useState("");
-    const [surname, updateSurname] = useState("");
-    const [email, updateEmail] = useState("");
-    const [contactNumber, updateContactNumber] = useState("");
-    const [password, updatePassword] = useState("");
 
+    const signUpForm = useFormik({
+        initialValues: {
+            firstName: "",
+            surname: "",
+            email: "",
+            contactNumber: "",
+            password:"",
+            confirmPassword:""
+        },
+        onSubmit: (values) => {
+            alert(JSON.stringify(values, null, 2));
+        },
+        validate: (values) => {
+            let errors = {};
+
+            if(!values.firstName){
+                errors.firstName = "Field is Required";
+            }
+            if(!values.surname){
+                errors.surname = "Field is Required";
+            }
+            if(!values.email){
+                errors.email = "Field is Required";
+            }
+            if(!values.contactNumber){
+                errors.contactNumber = "Field is Required";
+            }
+            if(!values.password){
+                errors.password = "Field is Required";
+            }
+            if(!values.confirmPassword){
+                errors.confirmPassword = "Field is Required";
+            }
+
+            return errors;
+        }
+
+    });
 
     const accountCreation = useEffect( () => {
 
-    }, []);
-
-    const formPrototype = useEffect( (event) => {
-        console.log(event);
     }, []);
 
     return (
@@ -44,52 +74,86 @@ const SignUpModal = () => {
             <Modal.Header>Create a New Account</Modal.Header>
 
             <Modal.Content>
-                <Form>
+                <Form onSubmit={ signUpForm.handleSubmit } as={ }>
+                    { ( signUpForm.touched.firstName && signUpForm.errors.firstName )
+                        ? <Label pointing="below" prompt> { signUpForm.errors.firstName } </Label>
+                        : null
+                    }
                     <Form.Input
                         label="First Name"
-                        value={ firstName }
-                        onChange={ (event) => {
-                           console.log(firstName);
-                        } }
+                        id="firstName"
+                        value={ signUpForm.values.firstName }
+                        onBlur={ signUpForm.handleBlur }
+                        onChange={ signUpForm.handleChange }
                         placeholder="John"
                     />
+                    { ( signUpForm.touched.surname && signUpForm.errors.surname )
+                        ? <Label pointing="below" prompt> { signUpForm.errors.surname } </Label>
+                        : null
+                    }
                     <Form.Input
                         label="Surname"
-                        value={ surname }
+                        id="surname"
+                        value={ signUpForm.values.surname }
+                        onBlur={ signUpForm.handleBlur }
+                        onChange={ signUpForm.handleChange }
                         placeholder="Doe"
                     />
+                    { ( signUpForm.touched.email && signUpForm.errors.email )
+                        ? <Label pointing="below" prompt> { signUpForm.errors.email } </Label>
+                        : null
+                    }
                     <Form.Input
                         label="Email Address"
-                        value={ email }
+                        id="email"
+                        value={ signUpForm.values.email }
+                        onBlur={ signUpForm.handleBlur }
+                        onChange={ signUpForm.handleChange }
                         placeholder="john@doe.edu"
                     />
+                    { ( signUpForm.touched.contactNumber && signUpForm.errors.contactNumber )
+                        ? <Label pointing="below" prompt> { signUpForm.errors.contactNumber } </Label>
+                        : null
+                    }
                     <Form.Input
                         label="Phone Number"
-                        value={ contactNumber }
+                        id="contactNumber"
+                        value={ signUpForm.values.contactNumber }
+                        onBlur={ signUpForm.handleBlur }
+                        onChange={ signUpForm.handleChange }
                         placeholder="+971501234567"
                     />
 
                     <Divider/>
-
+                    { ( signUpForm.touched.password && signUpForm.errors.password )
+                        ? <Label pointing="below" prompt> { signUpForm.errors.password } </Label>
+                        : null
+                    }
                     <Form.Input
                         label="Password"
-                        value={ password }
+                        id="password"
+                        value={ signUpForm.values.password }
+                        onBlur={ signUpForm.handleBlur }
+                        onChange={ signUpForm.handleChange }
                     />
+                    { ( signUpForm.touched.confirmPassword && signUpForm.errors.confirmPassword )
+                        ? <Label pointing="below" prompt> { signUpForm.errors.confirmPassword } </Label>
+                        : null
+                    }
                     <Form.Input
                         label="Confirm Password"
+                        id="confirmPassword"
+                        value={ signUpForm.values.confirmPassword }
+                        onBlur={ signUpForm.handleBlur }
+                        onChange={ signUpForm.handleChange }
                     />
-
+                    <Form.Button type="submit" color="olive">Submit</Form.Button>
                 </Form>
             </Modal.Content>
 
             <Modal.Actions>
                 <Button
                     color="grey"
-                    onClick={ (event) => {
-                        console.log(firstName);
-                        console.log(surname);
-                        console.log(email);
-                    } }
                 >
                     Cancel
                 </Button>
