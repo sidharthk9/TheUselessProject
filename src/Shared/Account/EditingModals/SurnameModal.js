@@ -15,7 +15,15 @@ const SurnameModal = () => {
             closeIcon
             size={ "tiny" }
             dimmer={ "blurring" }
-            trigger={ <Button size="medium" color={"white"} basic rounded>Surname</Button> }
+            trigger={
+                <Button
+                    size="medium"
+                    color="grey"
+                    basic
+                    rounded
+                    content="Surname"
+                />
+            }
         >
             <Modal.Header>Change the Surname?</Modal.Header>
 

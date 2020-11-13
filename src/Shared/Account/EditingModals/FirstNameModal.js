@@ -36,9 +36,9 @@ const FirstNameModal = () => {
             dimmer={ "blurring" }
             trigger={
                 <Button
-                    size="medium"
-                    color="white"
                     basic
+                    size="medium"
+                    color="grey"
                     rounded
                     content="First Name"
                 />
@@ -70,9 +70,11 @@ const FirstNameModal = () => {
             </Modal.Content>
 
             <Modal.Actions>
-                <Button color="grey" onClick={ () => setOpen(false) }>
-                    Cancel
-                </Button>
+                <Button
+                    color="grey"
+                    onClick={ () => setOpen(false) }
+                    content="Cancel"
+                />
                 <Button
                     content="Confirm"
                     labelPosition="right"

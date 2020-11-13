@@ -14,7 +14,7 @@ const MainNavigation = () => {
             <Dropdown.Item as={Link} to="/">Home</Dropdown.Item>
             <Dropdown.Item as={Link} to="/registerstudent">Register Student</Dropdown.Item>
             <Dropdown.Item as={Link} to="/dropoff">Drop Student</Dropdown.Item>
-            <Dropdown.Item as={Link} component={ ChangeDrop } >Change Location</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/#" component={ ChangeDrop } >Change Location</Dropdown.Item>
             <Dropdown.Item as={Link} to="/mapselection">Map Selection</Dropdown.Item>
             <Dropdown.Item as={Link} to="/arrival">Arrival Time</Dropdown.Item>
             <Dropdown.Item as={Link} to="/tracking">Bus Tracking</Dropdown.Item>
@@ -28,7 +28,7 @@ const MainNavigation = () => {
             <Dropdown.Item as={Link} to="/account">Account</Dropdown.Item>
             <Dropdown.Item as={Link} to="/login">Log In</Dropdown.Item>
             <Dropdown.Item as={Link} to="/signup">Sign Up</Dropdown.Item>
-            <Dropdown.Item as={Link} component={ LogOut }>Log Out</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/#" component={ LogOut }>Log Out</Dropdown.Item>
 
         </Dropdown.Menu>
     );
