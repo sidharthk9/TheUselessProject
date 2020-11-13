@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, Image, Form, Button, Segment } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import {Card, Form, Image, Label, Segment} from "semantic-ui-react";
+import {useFormik} from "formik";
 // Components
 import "../../assets/semantic/dist/semantic.min.css";
 import logo from "../../Static/Images/logo.jpeg"
@@ -8,6 +8,32 @@ import ForgotPasswordModal from "./Modals/ForgotPasswordModal";
 
 
 const LogIn = () => {
+    const loginForm = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+            persistentAccount: false
+        },
+        validate: (values) => {
+            let errors = {};
+
+            if(!values.email){ errors.email = "Field is Required"; }
+
+            if(!values.password){ errors.password = "Field is Required"; }
+
+            return errors;
+        },
+        onSubmit: (values) => { loginSubmission(values) }
+    });
+
+    const accountPersistence = () => {
+        loginForm.values.persistentAccount = !loginForm.values.persistentAccount;
+    };
+
+    const loginSubmission = (values) => {
+        alert(JSON.stringify(values, null, 2));
+    };
+
     return(
         <Card.Group itemsPerRow={1}>
 
@@ -33,21 +59,47 @@ const LogIn = () => {
 
                 <Card.Content extra textAlign={ "center" }>
                     <Segment inverted>
-                        <Form inverted>
+                        <Form onSubmit={ loginForm.handleSubmit } inverted widths="equal">
+                            { ( loginForm.touched.email && loginForm.errors.email )
+                                ? <Label pointing="below" prompt content={ loginForm.errors.email } />
+                                : null
+                            }
+                            <Form.Input
+                                fluid
+                                label="Email"
+                                id="email"
+                                value={ loginForm.values.email }
+                                onBlur={ loginForm.handleBlur }
+                                onChange={ loginForm.handleChange }
+                            />
 
-                            <Form.Group widths="equal">
-                                <Form.Input fluid label="Email" />
-                                <Form.Input fluid label="Password" />
-                            </Form.Group>
-                            <Form.Checkbox label="Stay Logged In" />
+                            { ( loginForm.touched.password && loginForm.errors.password )
+                                ? <Label pointing="below" prompt content={ loginForm.errors.password } />
+                                : null
+                            }
+                            <Form.Input
+                                fluid
+                                label="Password"
+                                id="password"
+                                value={ loginForm.values.password }
+                                onBlur={ loginForm.handleBlur }
+                                onChange={ loginForm.handleChange }
+                            />
 
-                            <Button
+                            <Form.Checkbox
+                                label="Stay Logged In?"
+                                id="persistentAccount"
+                                value={ loginForm.values.persistentAccount }
+                                onBlur={ loginForm.handleBlur }
+                                onClick={ accountPersistence }
+                            />
+
+                            <Form.Button
+                                type="submit"
                                 content="Log In"
                                 color="blue"
                                 size="large"
 
-                                as={ Link }
-                                to="/"
                             />
                             <ForgotPasswordModal />
 

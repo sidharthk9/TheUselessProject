@@ -144,7 +144,11 @@ const SignUpModal = () => {
                         onBlur={ signUpForm.handleBlur }
                         onChange={ signUpForm.handleChange }
                     />
-                    <Form.Button type="submit" color="olive">Submit</Form.Button>
+                    <Form.Button
+                        type="submit"
+                        color="olive"
+                        content="Submit"
+                    />
                 </Form>
             </Modal.Content>
 
