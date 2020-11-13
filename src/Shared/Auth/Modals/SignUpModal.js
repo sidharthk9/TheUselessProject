@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Divider, Form, Modal, Label } from "semantic-ui-react";
-import { useFormik, Formik, Form as FormTag, Field, ErrorMessage  } from "formik";
+import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
 import firebase from "../../Firebase/FirebaseConfig";
@@ -8,6 +8,10 @@ import firebase from "../../Firebase/FirebaseConfig";
 
 const SignUpModal = () => {
     const [open, setOpen] = useState(false);
+
+    const accountCreation = (values) => {
+        alert(JSON.stringify(values, null, 2));
+    };
 
     const signUpForm = useFormik({
         initialValues: {
@@ -18,39 +22,32 @@ const SignUpModal = () => {
             password:"",
             confirmPassword:""
         },
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
-        },
         validate: (values) => {
             let errors = {};
 
-            if(!values.firstName){
-                errors.firstName = "Field is Required";
-            }
-            if(!values.surname){
-                errors.surname = "Field is Required";
-            }
-            if(!values.email){
-                errors.email = "Field is Required";
-            }
-            if(!values.contactNumber){
-                errors.contactNumber = "Field is Required";
-            }
-            if(!values.password){
-                errors.password = "Field is Required";
-            }
-            if(!values.confirmPassword){
-                errors.confirmPassword = "Field is Required";
-            }
+            if(!values.firstName){ errors.firstName = "Field is Required"; }
+            if(values.firstName.length > 20 ) { errors.firstName = "Length exceeds 20 characters"; }
+
+            if(!values.surname){ errors.surname = "Field is Required"; }
+            if(values.surname.length > 20 ) { errors.surname = "Length exceeds 20 characters"; }
+
+            if(!values.email){ errors.email = "Field is Required"; }
+            if(values.email.length < 5 ) { errors.email = "Length is below 5 characters"; }
+
+            if(!values.contactNumber){ errors.contactNumber = "Field is Required"; }
+
+            if(!values.password){ errors.password = "Field is Required"; }
+            if(values.password.length < 5 ) { errors.password = "Length is below 5 characters"; }
+
+            if(!values.confirmPassword){ errors.confirmPassword = "Field is Required"; }
+            if(values.confirmPassword.length < 5 ) { errors.confirmPassword = "Length is below 5 characters"; }
+            if(values.password !== values.confirmPassword) { errors.confirmPassword = "Given passwords do not match"; }
 
             return errors;
-        }
-
+        },
+        onSubmit: (values) => { accountCreation(values) }
     });
 
-    const accountCreation = useEffect( () => {
-
-    }, []);
 
     return (
         <Modal
@@ -74,7 +71,7 @@ const SignUpModal = () => {
             <Modal.Header>Create a New Account</Modal.Header>
 
             <Modal.Content>
-                <Form onSubmit={ signUpForm.handleSubmit } as={ }>
+                <Form onSubmit={ signUpForm.handleSubmit }>
                     { ( signUpForm.touched.firstName && signUpForm.errors.firstName )
                         ? <Label pointing="below" prompt> { signUpForm.errors.firstName } </Label>
                         : null
@@ -154,6 +151,7 @@ const SignUpModal = () => {
             <Modal.Actions>
                 <Button
                     color="grey"
+                    onClick={ () => setOpen(false) }
                 >
                     Cancel
                 </Button>
