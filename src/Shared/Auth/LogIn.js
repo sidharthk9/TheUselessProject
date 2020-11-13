@@ -1,6 +1,6 @@
 import React from "react";
-import {Card, Form, Image, Label, Segment} from "semantic-ui-react";
-import {useFormik} from "formik";
+import { Card, Form, Image, Label, Segment } from "semantic-ui-react";
+import { useFormik } from "formik";
 // Components
 import "../../assets/semantic/dist/semantic.min.css";
 import logo from "../../Static/Images/logo.jpeg"
@@ -99,7 +99,6 @@ const LogIn = () => {
                                 content="Log In"
                                 color="blue"
                                 size="large"
-
                             />
                             <ForgotPasswordModal />
 

@@ -1,12 +1,32 @@
 import React from "react";
-import { Button, Modal, Form } from "semantic-ui-react";
+import {Button, Modal, Form, Label} from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
 
 
 const ForgotPasswordModal = () => {
     const [open, setOpen] = React.useState(false);
+
+    const passwordEditForm = useFormik({
+        initialValues: {
+            email: ""
+        },
+        validate: (values) => {
+            let errors = {};
+
+            if(!values.email){ errors.email = "Field is Required"; }
+
+            return errors;
+        },
+        onSubmit: (values) => { passwordEditing(values) }
+    });
+
+    const passwordEditing = (values) => {
+        alert(JSON.stringify(values, null, 2) );
+    };
 
     return (
         <Modal
@@ -30,8 +50,25 @@ const ForgotPasswordModal = () => {
                 <p>
                     Enter your Email Address to receive the editing link.
                 </p>
-                <Form>
-                    <Form.Input label="Email" placeholder="john@doe.edu" />
+                <Form onSubmit={ passwordEditForm.handleSubmit }>
+                    { ( passwordEditForm.touched.email && passwordEditForm.errors.email )
+                        ? <Label pointing="below" prompt content={ passwordEditForm.errors.email } />
+                        : null
+                    }
+                    <Form.Input
+                        label="Email"
+                        id="email"
+                        placeholder="john@doe.edu"
+                        value={ passwordEditForm.values.email }
+                        onBlur={ passwordEditForm.handleBlur }
+                        onChange={ passwordEditForm.handleChange }
+                    />
+                    <Form.Button
+                        type="submit"
+                        content="Continue"
+                        color="olive"
+                        size="large"
+                    />
                 </Form>
             </Modal.Content>
 
