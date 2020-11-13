@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {Table, Card, Button, Header, Icon, Divider} from "semantic-ui-react";
+import { Table, Card, Button, Header, Icon, Divider } from "semantic-ui-react";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 import DriverSelectionModal from "./Modals/DriverSelectionModal";

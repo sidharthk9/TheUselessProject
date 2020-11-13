@@ -92,7 +92,7 @@ const FleetTracking = (props) => {
                                 icon="bus"
 
                                 as={Link}
-                                to="/buspersonnel"
+                                to="/personnelselection"
                             />
                         </Segment>
                     </InfoWindow>

@@ -1,13 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {Button, Modal, Divider, Form} from "semantic-ui-react";
+import { Button, Modal, Divider, Form, Label } from "semantic-ui-react";
+import { useFormik } from "formik";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 
 
 const MonitorSelectionModal = () => {
     const [open, setOpen] = useState(false);
-    const [monitorName, setMonitorName] = useState("Null");
+
+    const monitorSelectionForm = useFormik({
+        initialValues: {
+            monitorName: "None"
+        },
+        validate: (values) => {
+            let errors={};
+
+            if(!values.monitorName){ errors.monitorName = "Field is Required"; }
+
+            return errors;
+        },
+        onSubmit: (values) => { selectionSubmission(values) }
+    });
+
+    const selectionSubmission = (values) => {
+        alert(JSON.stringify(values, null, 2));
+    };
 
     return(
         <Modal
@@ -22,29 +40,48 @@ const MonitorSelectionModal = () => {
                     inverted
                     color="green"
                     size="medium"
-                    content= { monitorName }
+                    content= { monitorSelectionForm.values.monitorName }
                 />
             }
         >
             <Modal.Header>Monitor Selection</Modal.Header>
 
             <Modal.Content>
-                <Modal.Content>
-                    Chosen Monitor: { monitorName }
-                </Modal.Content>
+
+                Chosen Monitor: { monitorSelectionForm.values.monitorName }
+
                 <Divider />
+
                 <Modal.Description>
-                    <Form>
+                    <Form onSubmit={monitorSelectionForm.handleSubmit}>
                         <Form.Field>Enter the New Monitor's name</Form.Field>
-                        <Form.Input />
+                        { ( monitorSelectionForm.touched.monitorName && monitorSelectionForm.errors.monitorName )
+                            ? <Label pointing="below" prompt content={ monitorSelectionForm.errors.monitorName } />
+                            : null
+                        }
+                        <Form.Input
+                            label="Driver Name"
+                            id="monitorName"
+                            value={ monitorSelectionForm.values.monitorName }
+                            onBlur={ monitorSelectionForm.handleBlur }
+                            onChange={ monitorSelectionForm.handleChange }
+                        />
+                        <Form.Button
+                            type="submit"
+                            content="Submit"
+                            color="blue"
+                            size="large"
+                        />
                     </Form>
                 </Modal.Description>
             </Modal.Content>
 
             <Modal.Actions>
-                <Button color="grey" onClick={ () => setOpen(false) }>
-                    Cancel
-                </Button>
+                <Button
+                    color="grey"
+                    onClick={ () => setOpen(false) }
+                    content="Cancel"
+                />
                 <Button
                     content="Confirm"
                     labelPosition="right"
@@ -53,7 +90,7 @@ const MonitorSelectionModal = () => {
                     positive
 
                     as={ Link }
-                    to="/buspersonnel"
+                    to="/personnelselection"
                 />
             </Modal.Actions>
 

@@ -1,13 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {Button, Modal, Divider, Form} from "semantic-ui-react";
+import { Button, Modal, Divider, Form, Label } from "semantic-ui-react";
+import { useFormik } from "formik";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 
 
 const DriverSelectionModal = () => {
     const [open, setOpen] = useState(false);
-    const [driverName, setDriverName] = useState("Null");
+
+    const driverSelectionForm = useFormik({
+        initialValues: {
+            driverName:"None"
+        },
+        validate: (values) => {
+            let errors={};
+
+            if(!values.driverName){ errors.driverName = "Field is Required"; }
+
+            return errors;
+        },
+        onSubmit: (values) => { selectionSubmission(values) }
+    });
+
+    const selectionSubmission = (values) => {
+        alert(JSON.stringify(values, null, 2));
+    };
 
     return(
         <Modal
@@ -22,29 +40,49 @@ const DriverSelectionModal = () => {
                     inverted
                     color="olive"
                     size="medium"
-                    content= { driverName }
+                    content= { driverSelectionForm.values.driverName }
                 />
             }
         >
             <Modal.Header>Driver Selection</Modal.Header>
 
             <Modal.Content>
-                <Modal.Content>
-                    Chosen driver: { driverName }
-                </Modal.Content>
+
+                Chosen driver: { driverSelectionForm.values.driverName }
+
                 <Divider />
+
                 <Modal.Description>
-                    <Form>
-                        <Form.Field>Enter the New Driver's name</Form.Field>
-                        <Form.Input />
+                    <Form onSubmit={driverSelectionForm.handleSubmit}>
+                        <Form.Field content="Enter the New Driver's name" />
+                        { ( driverSelectionForm.touched.driverName && driverSelectionForm.errors.driverName )
+                            ? <Label pointing="below" prompt content={ driverSelectionForm.errors.driverName } />
+                            : null
+                        }
+                        <Form.Input
+                            label="Driver Name"
+                            id="driverName"
+                            value={ driverSelectionForm.values.driverName }
+                            onBlur={ driverSelectionForm.handleBlur }
+                            onChange={ driverSelectionForm.handleChange }
+                        />
+                        <Form.Button
+                            type="submit"
+                            content="Submit"
+                            color="blue"
+                            size="large"
+                        />
                     </Form>
                 </Modal.Description>
+
             </Modal.Content>
 
             <Modal.Actions>
-                <Button color="grey" onClick={ () => setOpen(false) }>
-                    Cancel
-                </Button>
+                <Button
+                    color="grey"
+                    onClick={ () => setOpen(false) }
+                    content="Cancel"
+                />
                 <Button
                     content="Confirm"
                     labelPosition="right"
@@ -53,7 +91,7 @@ const DriverSelectionModal = () => {
                     positive
 
                     as={ Link }
-                    to="/buspersonnel"
+                    to="/personnelselection"
                 />
             </Modal.Actions>
 
