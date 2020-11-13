@@ -1,10 +1,31 @@
 import React from "react";
-import {Button, Form, Modal} from "semantic-ui-react";
+import { Button, Form, Label, Modal } from "semantic-ui-react";
+import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
 
 const PhoneNumberModal = () => {
     const [open, setOpen] = React.useState(false);
+
+    const contactNumberEditForm = useFormik({
+        initialValues: {
+            contactNumber: ""
+        },
+        validate: (values) => {
+            let errors = {};
+
+            if(!values.contactNumber){ errors.contactNumber = "Field is Required"; }
+
+            if(values.contactNumber.length > 15){ errors.contactNumber = "Length exceeds 15 characters"; }
+
+            return errors;
+        },
+        onSubmit: (values) => { contactNumberEditing(values) }
+    });
+
+    const contactNumberEditing = (values) => {
+        alert(JSON.stringify(values, null, 2) );
+    };
 
     return (
         <Modal
@@ -14,20 +35,47 @@ const PhoneNumberModal = () => {
             closeIcon
             size={ "tiny" }
             dimmer={ "blurring" }
-            trigger={ <Button size="medium" color={"white"} basic rounded>Phone Number</Button> }
+            trigger={
+                <Button
+                    size="medium"
+                    color="grey"
+                    basic
+                    rounded
+                    content="Phone Number"
+                />
+            }
         >
             <Modal.Header>Change the Phone Number?</Modal.Header>
 
             <Modal.Content>
-                <Form>
-                    <Form.Input label="New Number" placeholder="+971509874563" />
+                { ( contactNumberEditForm.touched.contactNumber && contactNumberEditForm.errors.contactNumber )
+                    ? <Label pointing="below" prompt content={ contactNumberEditForm.errors.contactNumber } />
+                    : null
+                }
+                <Form onSubmit={ contactNumberEditForm.handleSubmit }>
+                    <Form.Input
+                        label="New Number"
+                        placeholder="+971509874563"
+                        id="contactNumber"
+                        value={ contactNumberEditForm.values.contactNumber }
+                        onBlur={ contactNumberEditForm.handleBlur }
+                        onChange={ contactNumberEditForm.handleChange }
+                    />
+                    <Form.Button
+                        type="submit"
+                        content="Submit"
+                        color="olive"
+                        size="large"
+                    />
                 </Form>
             </Modal.Content>
 
             <Modal.Actions>
-                <Button color="grey" onClick={ () => setOpen(false) }>
-                    Cancel
-                </Button>
+                <Button
+                    color="grey"
+                    onClick={ () => setOpen(false) }
+                    content="Cancel"
+                />
                 <Button
                     content="Confirm"
                     labelPosition="right"

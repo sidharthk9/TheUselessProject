@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Modal, Form, Label} from "semantic-ui-react";
+import { Button, Modal, Form, Label } from "semantic-ui-react";
 import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
@@ -70,9 +70,11 @@ const EmailModal = () => {
             </Modal.Content>
 
             <Modal.Actions>
-                <Button color="grey" onClick={ () => setOpen(false) }>
-                    Cancel
-                </Button>
+                <Button
+                    color="grey"
+                    onClick={ () => setOpen(false) }
+                    content="Cancel"
+                />
                 <Button
                     content="Confirm"
                     labelPosition="right"
