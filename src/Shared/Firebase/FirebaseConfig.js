@@ -10,7 +10,7 @@ const firebaseConfig = {
     projectId: "bt-rak",
     storageBucket: "bt-rak.appspot.com",
     messagingSenderId: "1027541533283",
-    appId: "1:1027541533283:web:403a84f9c5de785af8ae56"
+    appId: "1:1027541533283:web:323b0c9aaf9418b4f8ae56"
 };
 firebase.initializeApp(firebaseConfig);
 
