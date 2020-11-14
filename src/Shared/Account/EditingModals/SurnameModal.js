@@ -17,7 +17,7 @@ const SurnameModal = () => {
 
             if(!values.surname){ errors.surname = "Field is Required"; }
 
-            if(values.surname.length < 20){ errors.surname = "Length exceeds 20 characters"; }
+            if(values.surname.length > 20){ errors.surname = "Length exceeds 20 characters"; }
 
             return errors;
         },

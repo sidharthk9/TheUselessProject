@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {Button, Header, Icon, Modal} from "semantic-ui-react";
+import { Button, Header, Icon, Modal } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 
@@ -36,7 +36,7 @@ const ChangeDrop = () => {
                     onClick={ () => setOpen(false) }
                     positive
 
-                    as= {Link}
+                    as= { Link }
                     to="/mapselection"
                 />
             </Modal.Actions>

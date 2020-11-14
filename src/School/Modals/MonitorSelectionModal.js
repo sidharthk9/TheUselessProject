@@ -79,7 +79,9 @@ const MonitorSelectionModal = () => {
             <Modal.Actions>
                 <Button
                     color="grey"
-                    onClick={ () => setOpen(false) }
+                    onClick={ () => {
+                        setOpen(false);
+                    } }
                     content="Cancel"
                 />
                 <Button

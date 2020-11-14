@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, Card } from "semantic-ui-react";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
@@ -29,15 +29,14 @@ const DropOff = () => {
 
                     <Button
                         color="instagram"
-                        as={Link}
+                        content="Map"
+
+                        as={ Link }
                         to="/mapselection"
-                    >
-                        Map
-                    </Button>
+                    />
                 </Button.Group>
 
             </Card.Content>
-
         </Card>
     );
 }

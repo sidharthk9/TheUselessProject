@@ -138,8 +138,8 @@ const Routes = () => {
                             icon="bus"
 
                             as="a"
-                            target={ "_" }
-                            href = { MapURL }
+                            target="_"
+                            href={ MapURL }
                         />
                     </Segment>
                 </InfoWindow>

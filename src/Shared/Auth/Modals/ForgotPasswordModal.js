@@ -18,6 +18,7 @@ const ForgotPasswordModal = () => {
             let errors = {};
 
             if(!values.email){ errors.email = "Field is Required"; }
+            if(values.email.length < 5){ errors.email = "Length is too short"; }
 
             return errors;
         },

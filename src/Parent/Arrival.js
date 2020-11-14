@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import {Container, Card, Button, Segment} from 'semantic-ui-react';
+import { Container, Card, Button, Segment } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
-import {Link} from "react-router-dom";
 
 const Arrival = () => {
 

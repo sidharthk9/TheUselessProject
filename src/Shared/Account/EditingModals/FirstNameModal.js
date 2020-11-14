@@ -16,6 +16,7 @@ const FirstNameModal = () => {
             let errors = {};
 
             if(!values.firstName){ errors.firstName = "Field is Required"; }
+            if(values.firstName.length > 20){ errors.firstName = "Length exceeds 20 characters"; }
 
             return errors;
         },

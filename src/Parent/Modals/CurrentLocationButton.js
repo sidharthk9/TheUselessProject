@@ -64,29 +64,36 @@ const CurrentLocationButton = () => {
             size={ "small" }
             dimmer={ "blurring" }
             trigger={
-                <Button color="instagram" onClick={ initializeWords }>
-                    Location
-                </Button>
+                <Button
+                    color="instagram"
+                    onClick={ initializeWords }
+                    content="Location"
+                />
             }
         >
             <Modal.Header>Confirm the location?</Modal.Header>
 
-            <Modal.Content>
-                Confirm the location: { words.Map }
-            </Modal.Content>
+            <Modal.Content
+                content="Confirm the location"
+                as={"a"}
+                href={ words.Map }
+                target="_"
+            />
 
             <Modal.Actions>
-                <Button color="grey" onClick={ () => setOpen(false) }>
-                    Cancel
-                </Button>
                 <Button
+                    color="grey"
+                    onClick={ () => setOpen(false) }
+                    content="Cancel"
+                />
+                <Button
+                    positive
+                    onClick={ () => setOpen(false) }
                     content="Confirm"
                     labelPosition="right"
                     icon="checkmark"
-                    onClick={ () => setOpen(false) }
-                    positive
 
-                    as= {Link}
+                    as= { Link }
                     to="/"
                 />
             </Modal.Actions>

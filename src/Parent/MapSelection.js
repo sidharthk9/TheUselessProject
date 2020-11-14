@@ -70,28 +70,28 @@ const SearchBar = ({ panTo }) => {
     };
 
     return (
-            <Combobox
-                onSelect={ handleSelect }
-            >
-                <p>
-                    Search for Landmarks:
-                </p>
-                <ComboboxInput
-                    value={ value }
-                    onChange={ handleInput }
-                    disabled={ !ready }
-                    placeholder="Enter an Address"
-                />
-                <ComboboxPopover>
-                    <ComboboxList>
-                        { status === "OK" &&
-                        data.map( ( { id, description} ) => (
-                            <ComboboxOption key={ id } value = { description } />
-                        ))
-                        }
-                    </ComboboxList>
-                </ComboboxPopover>
-            </Combobox>
+        <Combobox
+            onSelect={ handleSelect }
+        >
+            <p>
+                Search for Landmarks:
+            </p>
+            <ComboboxInput
+                value={ value }
+                onChange={ handleInput }
+                disabled={ !ready }
+                placeholder="Enter an Address"
+            />
+            <ComboboxPopover>
+                <ComboboxList>
+                    { status === "OK" &&
+                    data.map( ( { id, description} ) => (
+                        <ComboboxOption key={ id } value = { description } />
+                    ))
+                    }
+                </ComboboxList>
+            </ComboboxPopover>
+        </Combobox>
     );
 }
 
@@ -183,10 +183,10 @@ const MapSelection = () => {
                             origin: new window.google.maps.Point(0, 0),
                             anchor: new window.google.maps.Point(15, 15)
                         }}
-                        onClick={() => {
+                        onClick={ () => {
                             selectLocation(locations);
                             initializeWords(locations.lat, locations.lng);
-                        }}
+                        } }
                     />)
                     : null
                 }
@@ -204,11 +204,11 @@ const MapSelection = () => {
                                 <Button
                                     inverted
                                     positive
+                                    content="Confirm?"
+
                                     as={ Link }
                                     to="/"
-                                >
-                                    Confirm?
-                                </Button>
+                                />
                             </Segment>
                         </InfoWindow>)
                         : null
