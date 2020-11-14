@@ -3,14 +3,27 @@ import { Button, Divider, Form, Modal, Label } from "semantic-ui-react";
 import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
-import firebase from "../../Firebase/FirebaseConfig";
+import firebase from "../../Firebase/Firebase";
+
 
 
 const SignUpModal = () => {
     const [open, setOpen] = useState(false);
 
     const accountCreation = (values) => {
-        alert(JSON.stringify(values, null, 2));
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(values.email, values.password)
+            .catch( (error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if (errorCode == "auth/weak-password") {
+                    alert('The password is too weak.');
+                } else {
+                    alert(errorMessage);
+                }
+                console.log(error);
+            });
     };
 
     const signUpForm = useFormik({
@@ -118,7 +131,7 @@ const SignUpModal = () => {
                         value={ signUpForm.values.contactNumber }
                         onBlur={ signUpForm.handleBlur }
                         onChange={ signUpForm.handleChange }
-                        placeholder="+971501234567"
+                        placeholder="00971501234567"
                     />
 
                     <Divider/>

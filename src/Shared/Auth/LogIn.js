@@ -5,6 +5,8 @@ import { useFormik } from "formik";
 import "../../assets/semantic/dist/semantic.min.css";
 import logo from "../../Static/Images/logo.jpeg"
 import ForgotPasswordModal from "./Modals/ForgotPasswordModal";
+import firebase from "../Firebase/Firebase";
+
 
 
 const LogIn = () => {
@@ -31,7 +33,15 @@ const LogIn = () => {
     };
 
     const loginSubmission = (values) => {
-        alert(JSON.stringify(values, null, 2));
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(values.email, values.password)
+            .catch( (error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+                alert(`${errorCode}: ${errorMessage}`);
+            });
     };
 
     return(
