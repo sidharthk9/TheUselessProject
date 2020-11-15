@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Modal, Button, Icon, Header } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
+import firebase from "../Firebase/Firebase";
 
 
 const LogOut = () => {
@@ -28,12 +29,19 @@ const LogOut = () => {
                 </Button>
                 <Button
                     color="green"
-                    as={Link}
-                    to="/signup"
-                    onClick={ () => setOpen(false) }
-                >
-                    <Icon name="checkmark" /> Yes
-                </Button>
+                    icon="checkmark"
+                    onClick={ () => {
+                        setOpen(false);
+                        firebase
+                            .auth()
+                            .signOut()
+                            .then(function() {
+                                // Sign-out successful.
+                            }).catch(function(error) {
+                                // An error happened.
+                            })
+                    } }
+                />
             </Modal.Actions>
         </Modal>
     );

@@ -14,6 +14,9 @@ const SignUpModal = () => {
         firebase
             .auth()
             .createUserWithEmailAndPassword(values.email, values.password)
+            .then( (response) => {
+                console.log(response);
+            })
             .catch( (error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
