@@ -112,7 +112,7 @@ const Tracking = () => {
                                 content="Last Known Location"
                                 icon="bus"
 
-                                as={Link}
+                                as={ Link }
                                 to="/arrival"
                             />
                         </Segment>

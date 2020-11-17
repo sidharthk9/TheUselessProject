@@ -1,8 +1,8 @@
 import React from "react";
-import {Header, Image, Table, Card, Divider, Icon} from "semantic-ui-react";
+import { Header, Image, Table, Card, Divider, Icon } from "semantic-ui-react";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
-import profileImage from "../Static/Images/potato.svg";
+import profileImage from "../Static/Images/truePotato.png";
 import PendingParentModal from "./Modals/PendingParentModal";
 import ParentDetailsModal from "./Modals/ParentDetailsModal";
 

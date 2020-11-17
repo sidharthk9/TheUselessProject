@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Header, Image, Modal, Table, Label } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
-import profileImage from "../../Static/Images/potato.svg";
+import profileImage from "../../Static/Images/truePotato.png";
 
 
 const ParentDetailsModal = (props) => {

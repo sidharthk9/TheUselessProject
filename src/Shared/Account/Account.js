@@ -1,10 +1,10 @@
 import React from "react";
 import { Divider, Header, Icon, Reveal, Image, Item, Container, Label } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 import ImageModal from "./EditingModals/ImageModal";
-import profileImage from "../../Static/Images/potato.svg";
-import {Link} from "react-router-dom";
+import profileImage from "../../Static/Images/truePotato.png";
 import EmailModal from "./EditingModals/EmailModal";
 import FirstNameModal from "./EditingModals/FirstNameModal";
 import PasswordModal from "./EditingModals/PasswordModal";
@@ -38,21 +38,21 @@ const Account = () => {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={Link} component={ FirstNameModal } />
+                            <Item.Description as={ Link } component={ FirstNameModal } />
                             <Item.Meta>Sidharth</Item.Meta>
                         </Item.Content>
                     </Item>
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={Link} component={ SurnameModal } />
+                            <Item.Description as={ Link } component={ SurnameModal } />
                             <Item.Meta>Kishore</Item.Meta>
                         </Item.Content>
                     </Item>
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={Link} component={ EmailModal } />
+                            <Item.Description as={ Link } component={ EmailModal } />
                             <Label color="orange" basic circular>
                                 Unverified
                             </Label>
@@ -64,7 +64,7 @@ const Account = () => {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={Link} component={ PhoneNumberModal } />
+                            <Item.Description as={ Link } component={ PhoneNumberModal } />
                             <Label color="green" basic circular>
                                 Verified
                             </Label>
@@ -76,7 +76,7 @@ const Account = () => {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={Link} component={ PasswordModal } />
+                            <Item.Description as={ Link } component={ PasswordModal } />
                             <Item.Meta>***************</Item.Meta>
                         </Item.Content>
                     </Item>

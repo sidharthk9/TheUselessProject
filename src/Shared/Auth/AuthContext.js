@@ -31,15 +31,13 @@ export const AuthProvider = ({ children }) => {
     };
 
     useEffect(()=> {
-        const unsubscribe = firebase.auth()
+        return firebase.auth()
             .onAuthStateChanged(
             (user) => {
                 setCurrentUser(user);
                 loadingCredentials(true);
             }
             );
-
-        return unsubscribe;
     }, []);
 
     if(loadedCredentials === false){

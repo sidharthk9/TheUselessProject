@@ -42,12 +42,7 @@ const App = () => {
                     </Container>
                 </Route>
 
-                <Route exact path="/exit">
-                    <Container fluid>
-                    </Container>
-                </Route>
-
-                <Route exact path="/">
+                <Route exact path="/dashboard">
                     <Container fluid>
                         <Dashboard />
                     </Container>

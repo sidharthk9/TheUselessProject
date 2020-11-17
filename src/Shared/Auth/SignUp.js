@@ -48,7 +48,7 @@ const SignUp = () => {
                             label={ { as: "p", basic: true, pointing: "left", content: "Continue?" } }
                             labelPosition="right"
 
-                            as={Link}
+                            as={ Link }
                             to="/login"
                         />
 

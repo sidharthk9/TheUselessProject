@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Label, Modal } from "semantic-ui-react";
 import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
 
 const PasswordModal = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const passwordEditForm = useFormik({
         initialValues: {
@@ -62,6 +62,7 @@ const PasswordModal = () => {
                     <Form.Input
                         label="Old Password"
                         id="oldPassword"
+                        type="password"
                         value={ passwordEditForm.values.oldPassword }
                         onBlur={ passwordEditForm.handleBlur }
                         onChange={ passwordEditForm.handleChange }
@@ -73,6 +74,7 @@ const PasswordModal = () => {
                     <Form.Input
                         label="New Password"
                         id="newPassword"
+                        type="password"
                         value={ passwordEditForm.values.newPassword }
                         onBlur={ passwordEditForm.handleBlur }
                         onChange={ passwordEditForm.handleChange }
@@ -84,6 +86,7 @@ const PasswordModal = () => {
                     <Form.Input
                         label="Confirm Password"
                         id="confirmPassword"
+                        type="password"
                         value={ passwordEditForm.values.confirmPassword }
                         onBlur={ passwordEditForm.handleBlur }
                         onChange={ passwordEditForm.handleChange }

@@ -207,7 +207,7 @@ const MapSelection = () => {
                                     content="Confirm?"
 
                                     as={ Link }
-                                    to="/"
+                                    to="/dashboard"
                                 />
                             </Segment>
                         </InfoWindow>)

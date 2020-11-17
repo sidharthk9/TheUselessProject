@@ -96,6 +96,7 @@ const LogIn = () => {
                                 fluid
                                 label="Password"
                                 id="password"
+                                type="password"
                                 value={ loginForm.values.password }
                                 onBlur={ loginForm.handleBlur }
                                 onChange={ loginForm.handleChange }

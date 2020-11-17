@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth"
 
+//TODO: ENV CONVERSION IS BADLY NEEDED
 const firebaseConfig = {
     apiKey: "AIzaSyD0bnyABw7A31TG8FfhaF_e1fsQ-rVmrIQ",
     authDomain: "bt-rak.firebaseapp.com",

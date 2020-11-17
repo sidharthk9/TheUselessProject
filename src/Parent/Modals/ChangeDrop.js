@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Header, Icon, Modal } from "semantic-ui-react";
 //Components
@@ -6,7 +6,7 @@ import "../../assets/semantic/dist/semantic.min.css";
 
 
 const ChangeDrop = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     return (
         <Modal

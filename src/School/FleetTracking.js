@@ -91,7 +91,7 @@ const FleetTracking = (props) => {
                                 content="Last Known Location"
                                 icon="bus"
 
-                                as={Link}
+                                as={ Link }
                                 to="/personnelselection"
                             />
                         </Segment>

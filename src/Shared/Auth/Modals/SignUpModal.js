@@ -10,20 +10,23 @@ import { useAuth } from "../AuthContext";
 const SignUpModal = () => {
     const [open, setOpen] = useState(false);
     const { signUpProcess } = useAuth();
+    const [signUpErrors, updateError] =useState(null);
     const history = useHistory();
 
     const accountCreation = (values) => {
         signUpProcess(values.email, values.password)
             .then( (response) => {
                 console.log(response);
-                history.push("/");
+                history.push("/signup");
 
             })
             .catch( (error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
+
+                //TODO: Add the other error responses
                 if (errorCode === "auth/weak-password") {
-                    alert('The password is too weak.');
+                    updateError("The password is too weak.");
                 } else {
                     alert(errorMessage);
                 }
@@ -90,6 +93,7 @@ const SignUpModal = () => {
 
             <Modal.Content>
                 <Form onSubmit={ signUpForm.handleSubmit }>
+
                     { ( signUpForm.touched.firstName && signUpForm.errors.firstName )
                         ? <Label pointing="below" prompt> { signUpForm.errors.firstName } </Label>
                         : null
@@ -102,6 +106,7 @@ const SignUpModal = () => {
                         onChange={ signUpForm.handleChange }
                         placeholder="John"
                     />
+
                     { ( signUpForm.touched.surname && signUpForm.errors.surname )
                         ? <Label pointing="below" prompt> { signUpForm.errors.surname } </Label>
                         : null
@@ -114,6 +119,7 @@ const SignUpModal = () => {
                         onChange={ signUpForm.handleChange }
                         placeholder="Doe"
                     />
+
                     { ( signUpForm.touched.email && signUpForm.errors.email )
                         ? <Label pointing="below" prompt> { signUpForm.errors.email } </Label>
                         : null
@@ -126,6 +132,7 @@ const SignUpModal = () => {
                         onChange={ signUpForm.handleChange }
                         placeholder="john@doe.edu"
                     />
+
                     { ( signUpForm.touched.contactNumber && signUpForm.errors.contactNumber )
                         ? <Label pointing="below" prompt> { signUpForm.errors.contactNumber } </Label>
                         : null
@@ -140,6 +147,7 @@ const SignUpModal = () => {
                     />
 
                     <Divider/>
+
                     { ( signUpForm.touched.password && signUpForm.errors.password )
                         ? <Label pointing="below" prompt> { signUpForm.errors.password } </Label>
                         : null
@@ -147,10 +155,12 @@ const SignUpModal = () => {
                     <Form.Input
                         label="Password"
                         id="password"
+                        type="password"
                         value={ signUpForm.values.password }
                         onBlur={ signUpForm.handleBlur }
                         onChange={ signUpForm.handleChange }
                     />
+
                     { ( signUpForm.touched.confirmPassword && signUpForm.errors.confirmPassword )
                         ? <Label pointing="below" prompt> { signUpForm.errors.confirmPassword } </Label>
                         : null
@@ -158,25 +168,37 @@ const SignUpModal = () => {
                     <Form.Input
                         label="Confirm Password"
                         id="confirmPassword"
+                        type="password"
                         value={ signUpForm.values.confirmPassword }
                         onBlur={ signUpForm.handleBlur }
                         onChange={ signUpForm.handleChange }
                     />
+
+                    { (signUpErrors === null)
+                        ? null
+                        : <Label
+                            pointing="below"
+                            prompt
+                            onClick={ updateError(null) }
+                        > { signUpErrors } </Label>
+                    }
                     <Form.Button
                         type="submit"
                         color="olive"
                         content="Submit"
                     />
+
                 </Form>
             </Modal.Content>
 
             <Modal.Actions>
+
                 <Button
                     color="grey"
                     onClick={ () => setOpen(false) }
-                >
-                    Cancel
-                </Button>
+                    content="Cancel"
+                />
+
                 <Button
                     content="Confirm"
                     labelPosition="right"
@@ -184,6 +206,7 @@ const SignUpModal = () => {
                     onClick={ () => setOpen(false) }
                     positive
                 />
+
             </Modal.Actions>
         </Modal>
     );

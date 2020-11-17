@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Label, Modal } from "semantic-ui-react";
 import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
 
 const PhoneNumberModal = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const contactNumberEditForm = useFormik({
         initialValues: {
@@ -73,15 +73,15 @@ const PhoneNumberModal = () => {
             <Modal.Actions>
                 <Button
                     color="grey"
-                    onClick={ () => setOpen(false) }
                     content="Cancel"
+                    onClick={ () => setOpen(false) }
                 />
                 <Button
+                    positive
                     content="Confirm"
                     labelPosition="right"
                     icon="checkmark"
                     onClick={ () => setOpen(false) }
-                    positive
                 />
             </Modal.Actions>
         </Modal>

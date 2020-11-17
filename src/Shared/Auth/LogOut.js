@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Modal, Button, Icon, Header } from "semantic-ui-react";
 //Components
@@ -7,7 +7,7 @@ import { useAuth } from "./AuthContext";
 
 
 const LogOut = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const { logoutProcess } = useAuth();
     const history = useHistory();
 

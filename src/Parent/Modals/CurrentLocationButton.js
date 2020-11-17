@@ -94,7 +94,7 @@ const CurrentLocationButton = () => {
                     icon="checkmark"
 
                     as= { Link }
-                    to="/"
+                    to="/dashboard"
                 />
             </Modal.Actions>
         </Modal>

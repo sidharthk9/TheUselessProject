@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Label, Modal } from "semantic-ui-react";
 import { useFormik } from "formik";
 //Components
@@ -6,7 +6,7 @@ import "../../../assets/semantic/dist/semantic.min.css";
 
 
 const SurnameModal = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const surnameEditForm = useFormik({
         initialValues: {

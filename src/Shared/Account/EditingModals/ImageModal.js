@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Image, Modal } from "semantic-ui-react";
-import profileImage from "../../../Static/Images/potato.svg";
+import profileImage from "../../../Static/Images/truePotato.png";
 import editImage from "../../../Static/Images/edit.svg";
 
 
 const ImageModal = () => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     return (
         <Modal
