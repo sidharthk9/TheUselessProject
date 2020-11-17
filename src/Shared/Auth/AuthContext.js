@@ -1,34 +1,65 @@
-import React, { useEffect, useState, createContext } from "react";
-import { Card } from "semantic-ui-react";
+import React, { useEffect, useState, createContext, useContext } from "react";
+import { Container, Divider, Header, Icon } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 import firebase from "../Firebase/Firebase";
 
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
+export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
-    const [pending, setPending] = useState(true);
+    const [loadedCredentials, loadingCredentials] = useState(false);
 
-    useEffect( () => {
-        firebase
+    const signUpProcess = (email, password) => {
+        return firebase
             .auth()
-            .onAuthStateChanged((user) => {
+            .createUserWithEmailAndPassword(email, password);
+    };
+
+    const loginProcess = (email, password) => {
+        return firebase
+            .auth()
+            .signInWithEmailAndPassword(email, password);
+    };
+
+    const logoutProcess = () => {
+        return firebase
+            .auth()
+            .signOut();
+    };
+
+    useEffect(()=> {
+        const unsubscribe = firebase.auth()
+            .onAuthStateChanged(
+            (user) => {
                 setCurrentUser(user);
-                setPending(false);
-            });
+                loadingCredentials(true);
+            }
+            );
+
+        return unsubscribe;
     }, []);
 
-    if(pending){
-        return <>Loading...</>
+    if(loadedCredentials === false){
+        return(
+            <Container textAlign="center">
+                <Divider horizontal>
+                    <Header as="h4">
+                        <Icon name="spinner" />
+                        <Header.Content>Loading</Header.Content>
+                    </Header>
+                </Divider>
+            </Container>
+        );
     }
 
     return (
         <AuthContext.Provider
-            value={{ currentUser }}
+            value={ { currentUser, signUpProcess, loginProcess, logoutProcess } }
             >
-            { children }
+            { loadedCredentials && children }
         </AuthContext.Provider>
     );
 }

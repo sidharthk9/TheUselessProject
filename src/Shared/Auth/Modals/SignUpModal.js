@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { Button, Divider, Form, Modal, Label } from "semantic-ui-react";
 import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
-import firebase from "../../Firebase/Firebase";
-
+import { useAuth } from "../AuthContext";
 
 
 const SignUpModal = () => {
     const [open, setOpen] = useState(false);
+    const { signUpProcess } = useAuth();
+    const history = useHistory();
 
     const accountCreation = (values) => {
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(values.email, values.password)
+        signUpProcess(values.email, values.password)
             .then( (response) => {
                 console.log(response);
+                history.push("/");
+
             })
             .catch( (error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                if (errorCode == "auth/weak-password") {
+                if (errorCode === "auth/weak-password") {
                     alert('The password is too weak.');
                 } else {
                     alert(errorMessage);

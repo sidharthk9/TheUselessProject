@@ -1,15 +1,18 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Card, Form, Image, Label, Segment } from "semantic-ui-react";
 import { useFormik } from "formik";
 // Components
 import "../../assets/semantic/dist/semantic.min.css";
 import logo from "../../Static/Images/logo.jpeg"
 import ForgotPasswordModal from "./Modals/ForgotPasswordModal";
-import firebase from "../Firebase/Firebase";
-
+import { useAuth } from "./AuthContext";
 
 
 const LogIn = () => {
+    const { loginProcess } = useAuth();
+    const history = useHistory();
+
     const loginForm = useFormik({
         initialValues: {
             email: "",
@@ -33,11 +36,10 @@ const LogIn = () => {
     };
 
     const loginSubmission = (values) => {
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(values.email, values.password)
+        loginProcess(values.email, values.password)
             .then( (response) => {
                 console.log(response);
+                history.push("/");
             })
             .catch( (error) => {
                 var errorCode = error.code;

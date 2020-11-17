@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Modal, Button, Icon, Header } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
-import firebase from "../Firebase/Firebase";
+import { useAuth } from "./AuthContext";
 
 
 const LogOut = () => {
     const [open, setOpen] = React.useState(false);
+    const { logoutProcess } = useAuth();
+    const history = useHistory();
 
     return (
         <Modal
@@ -30,15 +32,14 @@ const LogOut = () => {
                 <Button
                     color="green"
                     icon="checkmark"
+                    content="Confirm"
                     onClick={ () => {
-                        setOpen(false);
-                        firebase
-                            .auth()
-                            .signOut()
-                            .then(function() {
-                                // Sign-out successful.
-                            }).catch(function(error) {
-                                // An error happened.
+                        logoutProcess()
+                            .then( () => {
+                                history.push("/signup");
+                                setOpen(false);
+                            }).catch( (error) => {
+                                console.log(error);
                             })
                     } }
                 />
