@@ -25,3 +25,6 @@ yarn-error.log*
 src/assets/semantic/
 frontend/.idea/
 debug.log
+
+
+.firebase
