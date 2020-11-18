@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Card, Form, Image, Label, Segment } from "semantic-ui-react";
 import { useFormik } from "formik";
@@ -10,6 +10,7 @@ import { useAuth } from "./AuthContext";
 
 
 const LogIn = () => {
+    const [loginStatus, updateStatus] = useState(null);
     const { loginProcess } = useAuth();
     const history = useHistory();
 
@@ -37,15 +38,13 @@ const LogIn = () => {
 
     const loginSubmission = (values) => {
         loginProcess(values.email, values.password)
-            .then( (response) => {
-                console.log(response);
-                history.push("/");
+            .then( () => {
+                history.push("/dashboard");
             })
             .catch( (error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-
-                alert(`${errorCode}: ${errorMessage}`);
+                //var errorCode = error.code;
+                const errorMessage = error.message;
+                updateStatus(errorMessage);
             });
     };
 
@@ -62,7 +61,7 @@ const LogIn = () => {
                 />
                 <Card.Content textAlign={ "center" }>
                     <Card.Header>BT RAK</Card.Header>
-                    <Card.Meta>Welcome Back!</Card.Meta>
+                    <Card.Meta>Welcome!</Card.Meta>
                 </Card.Content>
             </Card>
 
@@ -75,6 +74,7 @@ const LogIn = () => {
                 <Card.Content extra textAlign={ "center" }>
                     <Segment inverted>
                         <Form onSubmit={ loginForm.handleSubmit } inverted widths="equal">
+
                             { ( loginForm.touched.email && loginForm.errors.email )
                                 ? <Label pointing="below" prompt content={ loginForm.errors.email } />
                                 : null
@@ -110,6 +110,14 @@ const LogIn = () => {
                                 onClick={ accountPersistence }
                             />
 
+                            { (loginStatus === null)
+                                ? null
+                                : <Label
+                                    pointing="below"
+                                    prompt
+                                    content= { loginStatus }
+                                />
+                            }
                             <Form.Button
                                 type="submit"
                                 content="Log In"
