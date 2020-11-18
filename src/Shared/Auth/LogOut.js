@@ -15,7 +15,7 @@ const LogOut = () => {
         <Modal
             closeIcon
             open={ open }
-            trigger={ <Button color="grey" fluid>Log Out</Button> }
+            trigger={ <Button color="grey" fluid content={"Log Out"} /> }
             onClose={ () => setOpen(false) }
             onOpen={ () => setOpen(true) }
         >
@@ -33,14 +33,13 @@ const LogOut = () => {
                     color="green"
                     icon="checkmark"
                     content="Confirm"
-                    onClick={ () => {
-                        logoutProcess()
-                            .then( () => {
-                                history.push("/signup");
-                                setOpen(false);
-                            }).catch( (error) => {
-                                console.log(error);
-                            })
+                    onClick={  () => { logoutProcess()
+                        .then( () => {
+                            history.push("/signup");
+                            setOpen(false);
+                        }).catch( (error) => {
+                            console.log(error);
+                        })
                     } }
                 />
             </Modal.Actions>
