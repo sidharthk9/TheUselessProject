@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { Container, Divider, Header, Icon } from "semantic-ui-react";
+import {Container, Divider, Dropdown, Header, Icon, Menu} from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 import firebase from "../Firebase/Firebase";
+import MainNavigation from "../Navigation/MainNavigation";
 
 
 export const AuthContext = createContext(null);
@@ -54,7 +55,8 @@ export const AuthProvider = ({ children }) => {
 
     if(loadedCredentials === false){
         return(
-            <Container textAlign="center">
+            <Container textAlign="center" fluid>
+                <Menu inverted />
                 <Divider horizontal>
                     <Header as="h4">
                         <Icon name="spinner" />

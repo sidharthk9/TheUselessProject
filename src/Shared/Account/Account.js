@@ -10,9 +10,12 @@ import FirstNameModal from "./EditingModals/FirstNameModal";
 import PasswordModal from "./EditingModals/PasswordModal";
 import SurnameModal from "./EditingModals/SurnameModal";
 import PhoneNumberModal from "./EditingModals/PhoneNumberModal";
+import { useAuth } from "../Auth/AuthContext";
 
 
 export function Account() {
+    const { currentUser } = useAuth();
+
     return(
         <Container fluid>
             <Divider horizontal>
@@ -58,7 +61,7 @@ export function Account() {
                                 Unverified
                             </Label>
                             <Item.Meta>
-                                sidharth@gmail.com
+                                { currentUser.email }
                             </Item.Meta>
                         </Item.Content>
                     </Item>
@@ -78,7 +81,6 @@ export function Account() {
                     <Item>
                         <Item.Content>
                             <Item.Description as={ Link } component={ PasswordModal } />
-                            <Item.Meta>***************</Item.Meta>
                         </Item.Content>
                     </Item>
 
