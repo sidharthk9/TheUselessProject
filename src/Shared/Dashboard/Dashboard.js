@@ -6,7 +6,7 @@ import "../../assets/semantic/dist/semantic.min.css";
 
 export function Dashboard() {
     return(
-        <Container textAlign="center">
+        <Container textAlign="center" fluid>
             <Card centered>
 
                 <Card.Content>

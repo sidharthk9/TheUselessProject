@@ -145,7 +145,7 @@ export function MapSelection() {
     }
     if(!isLoaded) {
         return(
-            <Container textAlign="center">
+            <Container textAlign="center" fluid>
                 <Divider horizontal>
                     <Header as="h4">
                         <Icon name="map marker" />
@@ -157,7 +157,7 @@ export function MapSelection() {
     }
 
     return(
-        <Container textAlign="center">
+        <Container textAlign="center" fluid>
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="map marker" />

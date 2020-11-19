@@ -10,7 +10,7 @@ export function Arrival() {
     return(
 
         //TODO: Show an explicit confirmation of the student boarding the bus.
-        <Container textAlign="center">
+        <Container textAlign="center" fluid>
 
             <Card centered>
 

@@ -9,7 +9,7 @@ import MonitorSelectionModal from "./Modals/MonitorSelectionModal";
 
 export function PersonnelSelection() {
     return(
-        <Container textAlign="center">
+        <Container textAlign="center" fluid>
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="user circle outline" />

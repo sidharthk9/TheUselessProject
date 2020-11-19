@@ -14,7 +14,7 @@ import PhoneNumberModal from "./EditingModals/PhoneNumberModal";
 
 export function Account() {
     return(
-        <Container>
+        <Container fluid>
             <Divider horizontal>
                 <Header as="h3">
                     <Icon name="user circle"/>

@@ -8,6 +8,7 @@ import DropToggleButton from "./DropToggleButton";
 export function StudentList() {
     return(
         <Container fluid>
+
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="child" />

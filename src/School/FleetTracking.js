@@ -43,7 +43,7 @@ export function FleetTracking() {
     }
     if(!isLoaded) {
         return(
-            <Container textAlign="center">
+            <Container textAlign="center" fluid>
                 <Divider horizontal>
                     <Header as="h4">
                         <Icon name="bus" />
@@ -55,7 +55,7 @@ export function FleetTracking() {
     }
 
     return(
-        <Container textAlign="center">
+        <Container textAlign="center" fluid>
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="bus" />

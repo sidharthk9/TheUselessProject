@@ -9,7 +9,7 @@ import ParentDetailsModal from "./Modals/ParentDetailsModal";
 
 export function  RegisteredParents() {
     return(
-        <Container textAlign="center" >
+        <Container textAlign="center" fluid>
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="child" />

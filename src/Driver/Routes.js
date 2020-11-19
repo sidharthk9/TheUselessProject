@@ -76,7 +76,7 @@ export function Routes() {
     }
     if(!isLoaded) {
         return(
-            <Container textAlign="center">
+            <Container textAlign="center" fluid>
                 <Divider horizontal>
                     <Header as="h4">
                         <Icon name="bus" />
@@ -91,7 +91,7 @@ export function Routes() {
 
 
     return (
-        <Container textAlign="center">
+        <Container textAlign="center" fluid>
 
             <Divider horizontal>
                 <Header as="h4">
@@ -143,6 +143,7 @@ export function Routes() {
                         />
                     </Segment>
                 </InfoWindow>
+
             </GoogleMap>
         </Container>
     );
