@@ -11,8 +11,8 @@ import SignUp from "./Shared/Auth/SignUp";
 import LogIn from "./Shared/Auth/LogIn";
 import { RegisterStudent } from "./Parent/RegisterStudent";
 import { MapSelection } from "./Parent/MapSelection";
-import Arrival from "./Parent/Arrival";
-import Tracking from "./Parent/Tracking";
+import { Arrival } from "./Parent/Arrival";
+import { Tracking } from "./Parent/Tracking";
 import Routes from "./Driver/Routes";
 import RegisteredParents from "./School/RegisteredParents";
 import PersonnelSelection from "./School/PersonnelSelection";
@@ -53,17 +53,9 @@ const App = () => {
 
                 <PrivateRoute exact path="/mapselection" component={ MapSelection } />
 
-                <Route exact path="/arrival">
-                    <Container fluid>
-                        <Arrival />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/arrival" component={ Arrival } />
 
-                <Route exact path="/tracking">
-                    <Container fluid>
-                        <Tracking />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/tracking" component={ Tracking } />
 
                 <Route exact path="/routes">
                     <Container fluid>

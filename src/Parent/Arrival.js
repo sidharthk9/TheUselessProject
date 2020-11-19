@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 
-const Arrival = () => {
+export function Arrival() {
 
     const [time, updateTime] = useState(0);
     return(
+
+        //TODO: Show an explicit confirmation of the student boarding the bus.
         <Container textAlign="center">
 
             <Card centered>
@@ -69,5 +71,3 @@ const Arrival = () => {
         </Container>
     );
 }
-
-export default Arrival;

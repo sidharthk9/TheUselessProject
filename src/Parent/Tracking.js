@@ -38,8 +38,7 @@ navigator.geolocation.getCurrentPosition(
     locationOptions
 );
 
-
-const Tracking = () => {
+export function Tracking() {
 
     //Google Maps Prerequisite
     const { isLoaded, loadError } = useLoadScript({
@@ -124,5 +123,3 @@ const Tracking = () => {
         </Container>
     );
 }
-
-export default Tracking;
