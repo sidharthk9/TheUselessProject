@@ -29,6 +29,20 @@ export const AuthProvider = ({ children }) => {
             .signOut();
     };
 
+    const resetPasswordProcess = (email) => {
+        return firebase
+            .auth()
+            .sendPasswordResetEmail(email);
+    };
+
+    const updateEmailProcess = (email) => {
+        return currentUser.updateEmail(email);
+    };
+
+    const updatePasswordProcess = (password) => {
+        return currentUser.updatePassword(password);
+    };
+
     useEffect(() => {
         return firebase
             .auth()
@@ -53,7 +67,9 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider
-            value={ { currentUser, signUpProcess, loginProcess, logoutProcess } }
+            value={ { currentUser, signUpProcess, loginProcess, logoutProcess,
+                resetPasswordProcess, updateEmailProcess, updatePasswordProcess
+            } }
             >
             { loadedCredentials && children }
         </AuthContext.Provider>

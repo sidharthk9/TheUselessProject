@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
+import { useAuth } from "../AuthContext";
 
 
 const ForgotPasswordModal = () => {
     const [open, setOpen] = useState(false);
+    const [responseStatus, updateStatus] = useState(null);
+    const { resetPasswordProcess } = useAuth();
 
     const passwordEditForm = useFormik({
         initialValues: {
@@ -21,11 +24,16 @@ const ForgotPasswordModal = () => {
 
             return errors;
         },
-        onSubmit: (values) => { passwordEditing(values) }
+        onSubmit: (values) => { passwordEditing(values); }
     });
 
     const passwordEditing = (values) => {
-        alert(JSON.stringify(values, null, 2) );
+        resetPasswordProcess(values.email)
+            .then( updateStatus("Check your mail for the link") )
+            .catch( (error) => {
+                const errorMessage = error.message;
+                updateStatus(errorMessage);
+            });
     };
 
     return (
@@ -63,9 +71,18 @@ const ForgotPasswordModal = () => {
                         onBlur={ passwordEditForm.handleBlur }
                         onChange={ passwordEditForm.handleChange }
                     />
+
+                    { (responseStatus === null)
+                        ? null
+                        : <Label
+                            pointing="below"
+                            prompt
+                            content= { responseStatus }
+                        />
+                    }
                     <Form.Button
                         type="submit"
-                        content="Continue"
+                        content="Submit"
                         color="olive"
                         size="large"
                     />
