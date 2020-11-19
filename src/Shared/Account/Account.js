@@ -11,7 +11,8 @@ import PasswordModal from "./EditingModals/PasswordModal";
 import SurnameModal from "./EditingModals/SurnameModal";
 import PhoneNumberModal from "./EditingModals/PhoneNumberModal";
 
-const Account = () => {
+
+export function Account() {
     return(
         <div>
             <Divider horizontal>
@@ -87,5 +88,3 @@ const Account = () => {
         </div>
     );
 }
-
-export default Account;

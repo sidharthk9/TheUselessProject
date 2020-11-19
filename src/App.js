@@ -6,7 +6,7 @@ import "./assets/semantic/dist/semantic.min.css";
 import { Dashboard } from "./Shared/Dashboard/Dashboard";
 import MainHeader from "./Shared/Navigation/MainHeader";
 import DropOff from "./Parent/DropOff";
-import Account from "./Shared/Account/Account";
+import { Account } from "./Shared/Account/Account";
 import SignUp from "./Shared/Auth/SignUp";
 import LogIn from "./Shared/Auth/LogIn";
 import RegisterStudent from "./Parent/RegisterStudent";
@@ -45,11 +45,7 @@ const App = () => {
 
                 <PrivateRoute exact path="/dashboard" component={ Dashboard } />
 
-                <Route exact path="/account">
-                    <Container fluid>
-                        <Account />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/account" component={ Account } />
 
                 <Route exact path="/registerstudent">
                     <Container fluid>
