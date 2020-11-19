@@ -9,7 +9,7 @@ import { useAuth } from "../../Auth/AuthContext";
 const EmailModal = () => {
     const [open, setOpen] = useState(false);
     const [responseStatus, updateStatus] = useState(null);
-    const { updateEmailProcess } = useAuth();
+    const { currentUser, updateEmailProcess } = useAuth();
 
     const emailEditForm = useFormik({
         initialValues: {
@@ -26,12 +26,17 @@ const EmailModal = () => {
     });
 
     const emailEditing = (values) => {
-        updateEmailProcess(values.email)
-            .then( updateStatus("Updated") )
-            .catch( (error) => {
-                const errorMessage = error.message;
-                updateStatus(errorMessage);
-            });
+        if(values.email === currentUser.email){
+            updateStatus("Given Email matches the existing address");
+        }
+        else {
+            updateEmailProcess(values.email)
+                .then( updateStatus("Updated") )
+                .catch( (error) => {
+                    const errorMessage = error.message;
+                    updateStatus(errorMessage);
+                });
+        }
     };
 
     return (

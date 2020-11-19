@@ -3,9 +3,12 @@ import { Button, Form, Label, Modal } from "semantic-ui-react";
 import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
+import { useAuth } from "../../Auth/AuthContext";
 
 const PasswordModal = () => {
     const [open, setOpen] = useState(false);
+    const [responseStatus, updateStatus] = useState(null);
+    const { updatePasswordProcess } = useAuth();
 
     const passwordEditForm = useFormik({
         initialValues: {
@@ -30,7 +33,17 @@ const PasswordModal = () => {
     });
 
     const passwordEditing = (values) => {
-        alert(JSON.stringify(values, null, 2) );
+        if(values.oldPassword === values.newPassword){
+            updateStatus("Given Password matches the existing password");
+        }
+        else {
+            updatePasswordProcess(values.newPassword)
+                .then( updateStatus("Updated") )
+                .catch( (error) => {
+                    const errorMessage = error.message;
+                    updateStatus(errorMessage);
+                });
+        }
     };
 
     return (
@@ -91,6 +104,15 @@ const PasswordModal = () => {
                         onBlur={ passwordEditForm.handleBlur }
                         onChange={ passwordEditForm.handleChange }
                     />
+
+                    { (responseStatus === null)
+                        ? null
+                        : <Label
+                            pointing="below"
+                            prompt
+                            content= { responseStatus }
+                        />
+                    }
                     <Form.Button
                         type="submit"
                         content="Submit"
