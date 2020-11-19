@@ -96,7 +96,7 @@ const SearchBar = ({ panTo }) => {
 }
 
 
-const MapSelection = () => {
+export function MapSelection() {
 
     //Google Maps Prerequisite
     const { isLoaded, loadError } = useLoadScript({
@@ -217,5 +217,3 @@ const MapSelection = () => {
         </Container>
     );
 }
-
-export default MapSelection;

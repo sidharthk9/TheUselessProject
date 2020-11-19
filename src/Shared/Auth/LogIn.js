@@ -29,7 +29,7 @@ const LogIn = () => {
 
             return errors;
         },
-        onSubmit: (values) => { loginSubmission(values) }
+        onSubmit: (values) => { loginSubmission(values); }
     });
 
     const accountPersistence = () => {
@@ -39,11 +39,10 @@ const LogIn = () => {
     const loginSubmission = (values) => {
         loginProcess(values.email, values.password)
             .catch( (error) => {
-                //var errorCode = error.code;
                 const errorMessage = error.message;
                 updateStatus(errorMessage);
             });
-            history.push("/dashboard");
+        history.push("/dashboard");
     };
 
     return(

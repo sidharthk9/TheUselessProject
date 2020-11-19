@@ -5,12 +5,12 @@ import { Container } from "semantic-ui-react";
 import "./assets/semantic/dist/semantic.min.css";
 import { Dashboard } from "./Shared/Dashboard/Dashboard";
 import MainHeader from "./Shared/Navigation/MainHeader";
-import DropOff from "./Parent/DropOff";
+import { DropOff } from "./Parent/DropOff";
 import { Account } from "./Shared/Account/Account";
 import SignUp from "./Shared/Auth/SignUp";
 import LogIn from "./Shared/Auth/LogIn";
-import RegisterStudent from "./Parent/RegisterStudent";
-import MapSelection from "./Parent/MapSelection";
+import { RegisterStudent } from "./Parent/RegisterStudent";
+import { MapSelection } from "./Parent/MapSelection";
 import Arrival from "./Parent/Arrival";
 import Tracking from "./Parent/Tracking";
 import Routes from "./Driver/Routes";
@@ -49,17 +49,9 @@ const App = () => {
 
                 <PrivateRoute exact path="/registerstudent" component={ RegisterStudent } />
 
-                <Route exact path="/dropoff">
-                    <Container fluid>
-                        <DropOff />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/dropoff" component={ DropOff } />
 
-                <Route exact path="/mapselection">
-                    <Container fluid>
-                        <MapSelection />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/mapselection" component={ MapSelection } />
 
                 <Route exact path="/arrival">
                     <Container fluid>

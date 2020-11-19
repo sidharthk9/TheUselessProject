@@ -6,7 +6,7 @@ import "../assets/semantic/dist/semantic.min.css";
 import CurrentLocationButton from "./Modals/CurrentLocationButton";
 
 
-const DropOff = () => {
+export function DropOff() {
 
     return(
         <Card centered>
@@ -40,5 +40,3 @@ const DropOff = () => {
         </Card>
     );
 }
-
-export default DropOff;

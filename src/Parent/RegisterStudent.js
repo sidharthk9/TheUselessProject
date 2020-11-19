@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import "../assets/semantic/dist/semantic.min.css";
 
 
-const RegisterStudent = () => {
+export function RegisterStudent() {
     const studentForm = useFormik({
         initialValues: {
             studentNumber: ""
@@ -61,5 +61,3 @@ const RegisterStudent = () => {
         </Card>
     );
 }
-
-export default RegisterStudent;
