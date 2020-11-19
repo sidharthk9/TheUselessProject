@@ -1,12 +1,13 @@
 import React from "react";
-import { Divider, Header, Icon, Label, Table } from "semantic-ui-react";
+import { Container, Divider, Header, Icon, Label, Table } from "semantic-ui-react";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 import DropToggleButton from "./DropToggleButton";
 
-const StudentList = () => {
+
+export function StudentList() {
     return(
-        <>
+        <Container fluid>
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="child" />
@@ -73,8 +74,6 @@ const StudentList = () => {
 
                 </Table.Body>
             </Table>
-        </>
+        </Container>
     );
 }
-
-export default StudentList;

@@ -16,8 +16,8 @@ import { Tracking } from "./Parent/Tracking";
 import { Routes } from "./Driver/Routes";
 import { RegisteredParents } from "./School/RegisteredParents";
 import { PersonnelSelection } from "./School/PersonnelSelection";
-import FleetTracking from "./School/FleetTracking";
-import StudentList from "./Monitor/StudentList";
+import { FleetTracking } from "./School/FleetTracking";
+import { StudentList } from "./Monitor/StudentList";
 import { AuthProvider } from "./Shared/Auth/AuthContext";
 import PrivateRoute from "./Shared/Auth/PrivateRoute";
 
@@ -63,19 +63,12 @@ const App = () => {
 
                 <PrivateRoute exact path="/personnelselection" component={ PersonnelSelection } />
 
-                <Route exact path="/fleettracking">
-                    <Container fluid>
-                        <FleetTracking />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/fleettracking" component={ FleetTracking } />
 
-                <Route exact path="/studentlist">
-                    <Container fluid>
-                        <StudentList />
-                        </Container>
-                </Route>
+                <PrivateRoute exact path="/studentlist" component={ StudentList } />
 
                 <Redirect to="/signup" />
+
             </Switch>
 
             </AuthProvider>

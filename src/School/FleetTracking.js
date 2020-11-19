@@ -20,7 +20,7 @@ let center = {
 };
 
 
-const FleetTracking = (props) => {
+export function FleetTracking() {
 
     //Google Maps Prerequisite
     const { isLoaded, loadError } = useLoadScript({
@@ -101,5 +101,3 @@ const FleetTracking = (props) => {
         </Container>
     );
 }
-
-export default FleetTracking;
