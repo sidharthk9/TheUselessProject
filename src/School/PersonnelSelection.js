@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Table, Card, Button, Header, Icon, Divider } from "semantic-ui-react";
+import { Table, Card, Button, Header, Icon, Divider, Container } from "semantic-ui-react";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 import DriverSelectionModal from "./Modals/DriverSelectionModal";
 import MonitorSelectionModal from "./Modals/MonitorSelectionModal";
 
 
-const PersonnelSelection = () => {
+export function PersonnelSelection() {
     return(
-        <>
+        <Container textAlign="center">
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="user circle outline" />
@@ -89,8 +89,6 @@ const PersonnelSelection = () => {
                     </Table.Body>
                 </Table>
             </Card>
-        </>
+        </Container>
     );
 }
-
-export default PersonnelSelection;

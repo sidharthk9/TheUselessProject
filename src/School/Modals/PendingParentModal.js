@@ -23,7 +23,7 @@ const PendingParentModal = () => {
                 <Button
                     basic
                     content="Pending"
-                    color="Grey"
+                    color="grey"
                     size="medium"
                 />
             }

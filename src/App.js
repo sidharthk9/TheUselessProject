@@ -15,7 +15,7 @@ import { Arrival } from "./Parent/Arrival";
 import { Tracking } from "./Parent/Tracking";
 import { Routes } from "./Driver/Routes";
 import { RegisteredParents } from "./School/RegisteredParents";
-import PersonnelSelection from "./School/PersonnelSelection";
+import { PersonnelSelection } from "./School/PersonnelSelection";
 import FleetTracking from "./School/FleetTracking";
 import StudentList from "./Monitor/StudentList";
 import { AuthProvider } from "./Shared/Auth/AuthContext";
@@ -42,7 +42,7 @@ const App = () => {
                         <LogIn />
                     </Container>
                 </Route>
-
+                
                 <PrivateRoute exact path="/dashboard" component={ Dashboard } />
 
                 <PrivateRoute exact path="/account" component={ Account } />
@@ -61,11 +61,7 @@ const App = () => {
 
                 <PrivateRoute exact path="/registeredparents" component={ RegisteredParents } />
 
-                <Route exact path="/personnelselection">
-                    <Container fluid>
-                        <PersonnelSelection />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/personnelselection" component={ PersonnelSelection } />
 
                 <Route exact path="/fleettracking">
                     <Container fluid>
