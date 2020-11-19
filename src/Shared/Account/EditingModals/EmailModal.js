@@ -3,10 +3,13 @@ import { Button, Modal, Form, Label } from "semantic-ui-react";
 import { useFormik } from "formik";
 //Components
 import "../../../assets/semantic/dist/semantic.min.css";
+import { useAuth } from "../../Auth/AuthContext";
 
 
 const EmailModal = () => {
     const [open, setOpen] = useState(false);
+    const [responseStatus, updateStatus] = useState(null);
+    const { updateEmailProcess } = useAuth();
 
     const emailEditForm = useFormik({
         initialValues: {
@@ -23,7 +26,12 @@ const EmailModal = () => {
     });
 
     const emailEditing = (values) => {
-        alert(JSON.stringify(values, null, 2) );
+        updateEmailProcess(values.email)
+            .then( updateStatus("Updated") )
+            .catch( (error) => {
+                const errorMessage = error.message;
+                updateStatus(errorMessage);
+            });
     };
 
     return (
@@ -60,6 +68,15 @@ const EmailModal = () => {
                         onBlur={ emailEditForm.handleBlur }
                         onChange={ emailEditForm.handleChange }
                     />
+
+                    { (responseStatus === null)
+                        ? null
+                        : <Label
+                            pointing="below"
+                            prompt
+                            content= { responseStatus }
+                        />
+                    }
                     <Form.Button
                         type="submit"
                         content="Submit"
