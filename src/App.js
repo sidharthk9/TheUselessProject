@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-d
 import { Container } from "semantic-ui-react";
 //Components
 import "./assets/semantic/dist/semantic.min.css";
-import Dashboard from "./Shared/Dashboard/Dashboard";
+import { Dashboard } from "./Shared/Dashboard/Dashboard";
 import MainHeader from "./Shared/Navigation/MainHeader";
 import DropOff from "./Parent/DropOff";
 import Account from "./Shared/Account/Account";
@@ -19,6 +19,7 @@ import PersonnelSelection from "./School/PersonnelSelection";
 import FleetTracking from "./School/FleetTracking";
 import StudentList from "./Monitor/StudentList";
 import { AuthProvider } from "./Shared/Auth/AuthContext";
+import PrivateRoute from "./Shared/Auth/PrivateRoute";
 
 
 const App = () => {
@@ -42,11 +43,7 @@ const App = () => {
                     </Container>
                 </Route>
 
-                <Route exact path="/dashboard">
-                    <Container fluid>
-                        <Dashboard />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/dashboard" component={ Dashboard } />
 
                 <Route exact path="/account">
                     <Container fluid>

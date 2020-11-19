@@ -38,14 +38,12 @@ const LogIn = () => {
 
     const loginSubmission = (values) => {
         loginProcess(values.email, values.password)
-            .then( () => {
-                history.push("/dashboard");
-            })
             .catch( (error) => {
                 //var errorCode = error.code;
                 const errorMessage = error.message;
                 updateStatus(errorMessage);
             });
+            history.push("/dashboard");
     };
 
     return(
