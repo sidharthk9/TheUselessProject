@@ -14,7 +14,7 @@ import { MapSelection } from "./Parent/MapSelection";
 import { Arrival } from "./Parent/Arrival";
 import { Tracking } from "./Parent/Tracking";
 import { Routes } from "./Driver/Routes";
-import RegisteredParents from "./School/RegisteredParents";
+import { RegisteredParents } from "./School/RegisteredParents";
 import PersonnelSelection from "./School/PersonnelSelection";
 import FleetTracking from "./School/FleetTracking";
 import StudentList from "./Monitor/StudentList";

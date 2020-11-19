@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Image, Table, Card, Divider, Icon } from "semantic-ui-react";
+import { Header, Image, Table, Card, Divider, Icon, Container } from "semantic-ui-react";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 import profileImage from "../Static/Images/truePotato.png";
@@ -7,9 +7,9 @@ import PendingParentModal from "./Modals/PendingParentModal";
 import ParentDetailsModal from "./Modals/ParentDetailsModal";
 
 
-const RegisteredParents = () => {
+export function  RegisteredParents() {
     return(
-        <>
+        <Container textAlign="center" >
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="child" />
@@ -110,8 +110,6 @@ const RegisteredParents = () => {
 
                 </Table>
             </Card>
-        </>
+        </Container>
     );
 }
-
-export default RegisteredParents;
