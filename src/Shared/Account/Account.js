@@ -14,7 +14,7 @@ import PhoneNumberModal from "./EditingModals/PhoneNumberModal";
 
 export function Account() {
     return(
-        <div>
+        <Container>
             <Divider horizontal>
                 <Header as="h3">
                     <Icon name="user circle"/>
@@ -84,7 +84,6 @@ export function Account() {
 
                 </Item.Group>
             </Container>
-
-        </div>
+        </Container>
     );
 }

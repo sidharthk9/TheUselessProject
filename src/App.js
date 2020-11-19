@@ -47,11 +47,7 @@ const App = () => {
 
                 <PrivateRoute exact path="/account" component={ Account } />
 
-                <Route exact path="/registerstudent">
-                    <Container fluid>
-                        <RegisterStudent />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/registerstudent" component={ RegisterStudent } />
 
                 <Route exact path="/dropoff">
                     <Container fluid>
