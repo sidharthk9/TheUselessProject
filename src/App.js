@@ -13,7 +13,7 @@ import { RegisterStudent } from "./Parent/RegisterStudent";
 import { MapSelection } from "./Parent/MapSelection";
 import { Arrival } from "./Parent/Arrival";
 import { Tracking } from "./Parent/Tracking";
-import Routes from "./Driver/Routes";
+import { Routes } from "./Driver/Routes";
 import RegisteredParents from "./School/RegisteredParents";
 import PersonnelSelection from "./School/PersonnelSelection";
 import FleetTracking from "./School/FleetTracking";
@@ -57,17 +57,9 @@ const App = () => {
 
                 <PrivateRoute exact path="/tracking" component={ Tracking } />
 
-                <Route exact path="/routes">
-                    <Container fluid>
-                        <Routes />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/routes" component={ Routes } />
 
-                <Route exact path="/registeredparents">
-                    <Container fluid>
-                        <RegisteredParents />
-                    </Container>
-                </Route>
+                <PrivateRoute exact path="/registeredparents" component={ RegisteredParents } />
 
                 <Route exact path="/personnelselection">
                     <Container fluid>

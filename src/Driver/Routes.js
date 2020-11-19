@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
-import {GoogleMap, DirectionsRenderer, DirectionsService, useLoadScript, InfoWindow} from "@react-google-maps/api";
-import {Button, Container, Divider, Header, Icon, Segment} from "semantic-ui-react";
+import { GoogleMap, DirectionsRenderer, DirectionsService, useLoadScript, InfoWindow } from "@react-google-maps/api";
+import { Button, Container, Divider, Header, Icon, Segment } from "semantic-ui-react";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 
@@ -37,7 +37,7 @@ navigator.geolocation.getCurrentPosition(
 );
 
 
-const Routes = () => {
+export function Routes() {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY_FUCK_BUBBLEBOY,
         libraries
@@ -147,5 +147,3 @@ const Routes = () => {
         </Container>
     );
 }
-
-export default Routes;
