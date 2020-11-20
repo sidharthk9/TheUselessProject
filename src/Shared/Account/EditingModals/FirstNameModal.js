@@ -40,7 +40,7 @@ const FirstNameModal = () => {
                     basic
                     size="medium"
                     color="grey"
-                    rounded
+                    rounded="true"
                     content="First Name"
                 />
             }

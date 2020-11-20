@@ -40,7 +40,7 @@ const PhoneNumberModal = () => {
                     size="medium"
                     color="grey"
                     basic
-                    rounded
+                    rounded="true"
                     content="Phone Number"
                 />
             }

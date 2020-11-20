@@ -19,6 +19,7 @@ const SignUpModal = () => {
 
             })
             .catch( (error) => {
+                console.log(error);
                 const errorMessage = error.message;
                 updateStatus(errorMessage);
             });

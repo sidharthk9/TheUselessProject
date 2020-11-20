@@ -8,8 +8,6 @@ export function Arrival() {
 
     const [time, updateTime] = useState(0);
     return(
-
-        //TODO: Show an explicit confirmation of the student boarding the bus.
         <Container textAlign="center" fluid>
 
             <Card centered>
@@ -17,9 +15,19 @@ export function Arrival() {
                 <Card.Content>
                     <Card.Header>Dashboard</Card.Header>
                     <Card.Description>
-                        Arrival Time: { time } left
+                        Status:
+                        <Button
+                            color="yellow"
+                            icon="ellipsis horizontal"
+                            labelPosition="right"
+                            content="Away"
+                        />
                     </Card.Description>
+                    <Card.Meta>
+                        Arrival Time: { time } left
+                    </Card.Meta>
                 </Card.Content>
+
                 <Card.Content extra>
                     <Segment inverted>
                         <Button
@@ -66,6 +74,7 @@ export function Arrival() {
                         />
                     </Segment>
                 </Card.Content>
+
             </Card>
 
         </Container>

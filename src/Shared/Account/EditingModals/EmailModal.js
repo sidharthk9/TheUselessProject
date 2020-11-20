@@ -52,7 +52,7 @@ const EmailModal = () => {
                     size="medium"
                     color="grey"
                     basic
-                    rounded
+                    rounded="true"
                     content="Email"
                 />
             }

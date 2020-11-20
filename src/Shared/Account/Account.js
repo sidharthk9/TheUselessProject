@@ -42,21 +42,21 @@ export function Account() {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={ Link } component={ FirstNameModal } />
+                            <Item.Description as={ Link } to="/#" component={ FirstNameModal } />
                             <Item.Meta>Sidharth</Item.Meta>
                         </Item.Content>
                     </Item>
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={ Link } component={ SurnameModal } />
+                            <Item.Description as={ Link } to="/#" component={ SurnameModal } />
                             <Item.Meta>Kishore</Item.Meta>
                         </Item.Content>
                     </Item>
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={ Link } component={ EmailModal } />
+                            <Item.Description as={ Link } to="/#" component={ EmailModal } />
                             <Label color="orange" basic circular>
                                 Unverified
                             </Label>
@@ -68,7 +68,7 @@ export function Account() {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={ Link } component={ PhoneNumberModal } />
+                            <Item.Description as={ Link } to="/#" component={ PhoneNumberModal } />
                             <Label color="green" basic circular>
                                 Verified
                             </Label>
@@ -80,7 +80,7 @@ export function Account() {
 
                     <Item>
                         <Item.Content>
-                            <Item.Description as={ Link } component={ PasswordModal } />
+                            <Item.Description as={ Link } to="/#" component={ PasswordModal } />
                         </Item.Content>
                     </Item>
 
