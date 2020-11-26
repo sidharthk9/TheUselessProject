@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Modal, Divider } from "semantic-ui-react";
+import { Button, Modal } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 
 
-const PendingParentModal = () => {
+const PendingModal = () => {
     const [open, setOpen] = useState(false);
 
     return(
@@ -14,8 +14,8 @@ const PendingParentModal = () => {
             onOpen={ () => setOpen(true) }
             open={ open }
             closeIcon
-            size={ "small" }
-            dimmer={ "blurring" }
+            size="tiny"
+            dimmer="blurring"
             trigger={
                 <Button
                     basic
@@ -28,10 +28,7 @@ const PendingParentModal = () => {
             <Modal.Header>Pending Registration</Modal.Header>
 
             <Modal.Content>
-                <Modal.Content>
-                    A Driver is requesting approval to use the application. <br />
-                    Confirm User?
-                </Modal.Content>
+                    This User is requesting approval to use the application.
             </Modal.Content>
 
             <Modal.Actions>
@@ -48,9 +45,6 @@ const PendingParentModal = () => {
                     icon="checkmark"
                     onClick={ () => setOpen(false) }
                     positive
-
-                    as={ Link }
-                    to="/registeredparents"
                 />
 
             </Modal.Actions>
@@ -59,4 +53,4 @@ const PendingParentModal = () => {
     );
 }
 
-export default PendingParentModal;
+export default PendingModal;

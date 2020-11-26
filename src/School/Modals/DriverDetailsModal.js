@@ -81,7 +81,7 @@ const DriverDetailsModal = (props) => {
                     positive
 
                     as={ Link }
-                    to="/registeredparents"
+                    to="/registerdrivers"
                 />
             </Modal.Actions>
 

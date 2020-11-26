@@ -88,7 +88,7 @@ const ParentDetailsModal = (props) => {
                     positive
 
                     as={ Link }
-                    to="/registeredparents"
+                    to="/registerparents"
                 />
             </Modal.Actions>
 

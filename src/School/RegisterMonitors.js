@@ -4,17 +4,17 @@ import { Header, Image, Table, Card, Divider, Icon, Container } from "semantic-u
 import "../assets/semantic/dist/semantic.min.css";
 import profileImage from "../Static/Images/truePotato.png";
 import PendingModal from "./Modals/PendingModal";
-import DriverDetailsModal from "./Modals/DriverDetailsModal";
+import MonitorDetailsModal from "./Modals/MonitorDetailsModal";
 
 
-export function  RegisterDrivers() {
+export function RegisterMonitors() {
     return(
         <Container textAlign="center" fluid>
 
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="bus" />
-                    <Header.Content>Driver Registration</Header.Content>
+                    <Header.Content>Monitor Registration</Header.Content>
                 </Header>
             </Divider>
 
@@ -25,7 +25,7 @@ export function  RegisterDrivers() {
 
                         <Table.Row>
                             <Table.HeaderCell>Bus ID</Table.HeaderCell>
-                            <Table.HeaderCell>Driver Name</Table.HeaderCell>
+                            <Table.HeaderCell>Monitor Name</Table.HeaderCell>
                             <Table.HeaderCell>Registration Status</Table.HeaderCell>
                         </Table.Row>
 
@@ -40,7 +40,7 @@ export function  RegisterDrivers() {
                             <Table.Cell>
                                 <Header as="h4" image>
                                     <Image src={ profileImage } rounded size="small" circular/>
-                                    <DriverDetailsModal name="Lana" />
+                                    <MonitorDetailsModal name="Lana" />
                                 </Header>
                             </Table.Cell>
 
@@ -55,7 +55,7 @@ export function  RegisterDrivers() {
                             <Table.Cell>
                                 <Header as="h4" image>
                                     <Image src={ profileImage } rounded size="small" circular/>
-                                    <DriverDetailsModal name="Lena" />
+                                    <MonitorDetailsModal name="Lena" />
                                 </Header>
                             </Table.Cell>
 
@@ -70,7 +70,7 @@ export function  RegisterDrivers() {
                             <Table.Cell>
                                 <Header as="h4" image>
                                     <Image src={ profileImage } rounded size="small" circular/>
-                                    <DriverDetailsModal name="Lina" />
+                                    <MonitorDetailsModal name="Lina" />
                                 </Header>
                             </Table.Cell>
 

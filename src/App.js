@@ -16,6 +16,7 @@ import { Tracking } from "./Parent/Tracking";
 import { Routes } from "./Driver/Routes";
 import { RegisterParents } from "./School/RegisterParents";
 import { RegisterDrivers } from "./School/RegisterDrivers";
+import { RegisterMonitors } from "./School/RegisterMonitors";
 import { PersonnelSelection } from "./School/PersonnelSelection";
 import { FleetTracking } from "./School/FleetTracking";
 import { StudentList } from "./Monitor/StudentList";
@@ -63,6 +64,8 @@ const App = () => {
                     <PrivateRoute exact path="/registerparents" component={ RegisterParents } />
 
                     <PrivateRoute exact path="/registerdrivers" component={ RegisterDrivers } />
+
+                    <PrivateRoute exact path="/registermonitors" component={ RegisterMonitors } />
 
                     <PrivateRoute exact path="/personnelselection" component={ PersonnelSelection } />
 
