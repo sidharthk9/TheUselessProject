@@ -3,27 +3,29 @@ import { Header, Image, Table, Card, Divider, Icon, Container } from "semantic-u
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 import profileImage from "../Static/Images/truePotato.png";
-import PendingParentModal from "./Modals/PendingParentModal";
-import ParentDetailsModal from "./Modals/ParentDetailsModal";
+import PendingDriverModal from "./Modals/PendingDriverModal";
+import DriverDetailsModal from "./Modals/DriverDetailsModal";
 
 
-export function  RegisteredParents() {
+export function  RegisterDrivers() {
     return(
         <Container textAlign="center" fluid>
+
             <Divider horizontal>
                 <Header as="h4">
-                    <Icon name="child" />
-                    <Header.Content>Parent Registration</Header.Content>
+                    <Icon name="bus" />
+                    <Header.Content>Driver Registration</Header.Content>
                 </Header>
             </Divider>
 
             <Card centered color="pink" fluid>
                 <Table padded celled size="large" textAlign="center" selectable>
+
                     <Table.Header>
 
                         <Table.Row>
-                            <Table.HeaderCell>Parent Name</Table.HeaderCell>
-                            <Table.HeaderCell>Student ID</Table.HeaderCell>
+                            <Table.HeaderCell>Bus ID</Table.HeaderCell>
+                            <Table.HeaderCell>Driver Name</Table.HeaderCell>
                             <Table.HeaderCell>Registration Status</Table.HeaderCell>
                         </Table.Row>
 
@@ -33,74 +35,44 @@ export function  RegisteredParents() {
 
                         <Table.Row>
 
+                            <Table.Cell>66</Table.Cell>
+
                             <Table.Cell>
                                 <Header as="h4" image>
                                     <Image src={ profileImage } rounded size="small" circular/>
-                                    <ParentDetailsModal name="Lana" />
+                                    <DriverDetailsModal name="Lana" />
                                 </Header>
                             </Table.Cell>
 
-                            <Table.Cell>66</Table.Cell>
-
-                            <Table.Cell warning> <PendingParentModal /> </Table.Cell>
+                            <Table.Cell warning> <PendingDriverModal /> </Table.Cell>
 
                         </Table.Row>
 
                         <Table.Row>
-
-                            <Table.Cell>
-                                <Header as="h4" image>
-                                    <Image src={ profileImage } rounded size="small" circular/>
-                                    <ParentDetailsModal name="Lena" />
-                                </Header>
-                            </Table.Cell>
 
                             <Table.Cell>67</Table.Cell>
 
-                            <Table.Cell warning><PendingParentModal /></Table.Cell>
+                            <Table.Cell>
+                                <Header as="h4" image>
+                                    <Image src={ profileImage } rounded size="small" circular/>
+                                    <DriverDetailsModal name="Lena" />
+                                </Header>
+                            </Table.Cell>
+
+                            <Table.Cell warning><PendingDriverModal /></Table.Cell>
 
                         </Table.Row>
 
                         <Table.Row>
-
-                            <Table.Cell>
-                                <Header as="h4" image>
-                                    <Image src={ profileImage } rounded size="small" circular/>
-                                    <ParentDetailsModal name="Lina" />
-                                </Header>
-                            </Table.Cell>
 
                             <Table.Cell>68</Table.Cell>
 
-                            <Table.Cell positive>Registered</Table.Cell>
-
-                        </Table.Row>
-
-                        <Table.Row>
-
                             <Table.Cell>
                                 <Header as="h4" image>
                                     <Image src={ profileImage } rounded size="small" circular/>
-                                    <ParentDetailsModal name="Lona" />
+                                    <DriverDetailsModal name="Lina" />
                                 </Header>
                             </Table.Cell>
-
-                            <Table.Cell>69</Table.Cell>
-
-                            <Table.Cell positive>Registered</Table.Cell>
-
-                        </Table.Row>
-
-                        <Table.Row>
-
-                            <Table.Cell>
-                                <Header as="h4" image>
-                                    <Image src={ profileImage } rounded size="small" circular/>
-                                    <ParentDetailsModal name="Luna" />
-                                </Header>
-                            </Table.Cell>
-
-                            <Table.Cell>70</Table.Cell>
 
                             <Table.Cell positive>Registered</Table.Cell>
 

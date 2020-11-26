@@ -14,7 +14,8 @@ import { MapSelection } from "./Parent/MapSelection";
 import { Arrival } from "./Parent/Arrival";
 import { Tracking } from "./Parent/Tracking";
 import { Routes } from "./Driver/Routes";
-import { RegisteredParents } from "./School/RegisteredParents";
+import { RegisterParents } from "./School/RegisterParents";
+import { RegisterDrivers } from "./School/RegisterDrivers";
 import { PersonnelSelection } from "./School/PersonnelSelection";
 import { FleetTracking } from "./School/FleetTracking";
 import { StudentList } from "./Monitor/StudentList";
@@ -28,48 +29,50 @@ const App = () => {
         <Router>
             <AuthProvider>
 
-            <MainHeader />
-            <Switch>
+                <MainHeader />
+                <Switch>
 
-                <Route exact path="/signup">
-                    <Container fluid>
-                        <SignUp />
-                    </Container>
-                </Route>
+                    <Route exact path="/signup">
+                        <Container fluid>
+                            <SignUp />
+                        </Container>
+                    </Route>
 
-                <Route exact path="/login">
-                    <Container fluid>
-                        <LogIn />
-                    </Container>
-                </Route>
-                
-                <PrivateRoute exact path="/dashboard" component={ Dashboard } />
+                    <Route exact path="/login">
+                        <Container fluid>
+                            <LogIn />
+                        </Container>
+                    </Route>
 
-                <PrivateRoute exact path="/account" component={ Account } />
+                    <PrivateRoute exact path="/dashboard" component={ Dashboard } />
 
-                <PrivateRoute exact path="/registerstudent" component={ RegisterStudent } />
+                    <PrivateRoute exact path="/account" component={ Account } />
 
-                <PrivateRoute exact path="/dropoff" component={ DropOff } />
+                    <PrivateRoute exact path="/registerstudent" component={ RegisterStudent } />
 
-                <PrivateRoute exact path="/mapselection" component={ MapSelection } />
+                    <PrivateRoute exact path="/dropoff" component={ DropOff } />
 
-                <PrivateRoute exact path="/arrival" component={ Arrival } />
+                    <PrivateRoute exact path="/mapselection" component={ MapSelection } />
 
-                <PrivateRoute exact path="/tracking" component={ Tracking } />
+                    <PrivateRoute exact path="/arrival" component={ Arrival } />
 
-                <PrivateRoute exact path="/routes" component={ Routes } />
+                    <PrivateRoute exact path="/tracking" component={ Tracking } />
 
-                <PrivateRoute exact path="/registeredparents" component={ RegisteredParents } />
+                    <PrivateRoute exact path="/routes" component={ Routes } />
 
-                <PrivateRoute exact path="/personnelselection" component={ PersonnelSelection } />
+                    <PrivateRoute exact path="/registerparents" component={ RegisterParents } />
 
-                <PrivateRoute exact path="/fleettracking" component={ FleetTracking } />
+                    <PrivateRoute exact path="/registerdrivers" component={ RegisterDrivers } />
 
-                <PrivateRoute exact path="/studentlist" component={ StudentList } />
+                    <PrivateRoute exact path="/personnelselection" component={ PersonnelSelection } />
 
-                <Redirect to="/signup" />
+                    <PrivateRoute exact path="/fleettracking" component={ FleetTracking } />
 
-            </Switch>
+                    <PrivateRoute exact path="/studentlist" component={ StudentList } />
+
+                    <Redirect to="/signup" />
+
+                </Switch>
 
             </AuthProvider>
         </Router>
