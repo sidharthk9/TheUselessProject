@@ -5,12 +5,14 @@ import { Table, Card, Button, Header, Icon, Divider, Container } from "semantic-
 import "../assets/semantic/dist/semantic.min.css";
 import DriverSelectionModal from "./Modals/DriverSelectionModal";
 import MonitorSelectionModal from "./Modals/MonitorSelectionModal";
+import BusSelectionModal from "./Modals/BusSelectionModal";
 
 
 export function PersonnelSelection() {
     return(
         <Container textAlign="center" fluid>
-            <Divider horizontal>
+
+			<Divider horizontal>
                 <Header as="h4">
                     <Icon name="user circle outline" />
                     <Header.Content>Personnel Selection</Header.Content>
@@ -19,6 +21,7 @@ export function PersonnelSelection() {
 
             <Card centered color="purple" fluid>
                 <Table padded celled size="large" textAlign="center" selectable>
+
                     <Table.Header>
 
                         <Table.Row>
@@ -33,7 +36,7 @@ export function PersonnelSelection() {
                     <Table.Body>
 
                         <Table.Row>
-                            <Table.Cell>67</Table.Cell>
+                            <Table.Cell><BusSelectionModal number={ 67 } /></Table.Cell>
                             <Table.Cell><DriverSelectionModal /></Table.Cell>
                             <Table.Cell><MonitorSelectionModal /></Table.Cell>
                             <Table.Cell>
@@ -51,7 +54,7 @@ export function PersonnelSelection() {
                         </Table.Row>
 
                         <Table.Row>
-                            <Table.Cell>68</Table.Cell>
+                            <Table.Cell><BusSelectionModal number={ 68 } /></Table.Cell>
                             <Table.Cell><DriverSelectionModal /></Table.Cell>
                             <Table.Cell><MonitorSelectionModal /></Table.Cell>
                             <Table.Cell>
@@ -69,7 +72,7 @@ export function PersonnelSelection() {
                         </Table.Row>
 
                         <Table.Row>
-                            <Table.Cell>69</Table.Cell>
+                            <Table.Cell><BusSelectionModal number={ 69 } /></Table.Cell>
                             <Table.Cell><DriverSelectionModal /></Table.Cell>
                             <Table.Cell><MonitorSelectionModal /></Table.Cell>
                             <Table.Cell>

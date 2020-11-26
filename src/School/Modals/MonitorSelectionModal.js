@@ -38,9 +38,9 @@ const MonitorSelectionModal = () => {
             trigger={
                 <Button
                     inverted
-                    color="green"
+                    color="yellow"
                     size="medium"
-                    content= { monitorSelectionForm.values.monitorName }
+                    content={ monitorSelectionForm.values.monitorName }
                 />
             }
         >

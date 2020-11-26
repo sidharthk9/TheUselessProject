@@ -40,7 +40,7 @@ const DriverSelectionModal = () => {
                     inverted
                     color="olive"
                     size="medium"
-                    content= { driverSelectionForm.values.driverName }
+                    content={ driverSelectionForm.values.driverName }
                 />
             }
         >

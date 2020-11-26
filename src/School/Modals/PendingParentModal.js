@@ -53,9 +53,7 @@ const PendingParentModal = () => {
                     onClick={ () => setOpen(false) }
                     positive
 
-                    as={ Link }
-                    to="/registeredparents"
-                />
+				/>
             </Modal.Actions>
 
         </Modal>

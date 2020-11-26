@@ -10,14 +10,14 @@ export function RegisterStudent() {
         initialValues: {
             studentNumber: ""
         },
-        validate: (values) => {
+		validate: (values) => {
             let errors = {};
 
             if(!values.studentNumber){ errors.studentNumber = "Field is Required"; }
 
             return errors;
         },
-        onSubmit: (values) => { numberSubmission(values)}
+        onSubmit: (values) => { numberSubmission(values) }
     });
 
     const numberSubmission = (values) => {
@@ -33,6 +33,7 @@ export function RegisterStudent() {
 
                     <Form onSubmit={studentForm.handleSubmit}>
                         <Form.Field content="Request will be submitted to the school for approval." />
+
                         { ( studentForm.touched.studentNumber && studentForm.errors.studentNumber )
                             ? <Label pointing="below" prompt content={ studentForm.errors.studentNumber } />
                             : null
@@ -55,6 +56,7 @@ export function RegisterStudent() {
                         />
 
                     </Form>
+
                 </Card.Description>
             </Card.Content>
 
