@@ -22,6 +22,7 @@ import { FleetTracking } from "./School/FleetTracking";
 import { StudentList } from "./Monitor/StudentList";
 import { AuthProvider } from "./Shared/Auth/AuthContext";
 import PrivateRoute from "./Shared/Auth/PrivateRoute";
+import {RegisterAdmins} from "./School/RegisterAdmins";
 
 
 const App = () => {
@@ -66,6 +67,8 @@ const App = () => {
                     <PrivateRoute exact path="/registerdrivers" component={ RegisterDrivers } />
 
                     <PrivateRoute exact path="/registermonitors" component={ RegisterMonitors } />
+
+                    <PrivateRoute exact path="/registeradmins" component={ RegisterAdmins } />
 
                     <PrivateRoute exact path="/personnelselection" component={ PersonnelSelection } />
 
