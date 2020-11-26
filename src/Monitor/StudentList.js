@@ -3,6 +3,7 @@ import { Container, Divider, Header, Icon, Label, Table } from "semantic-ui-reac
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 import DropToggleButton from "./DropToggleButton";
+import PositionToggleButton from "./PositionToggleButton";
 
 
 export function StudentList() {
@@ -22,7 +23,8 @@ export function StudentList() {
                     <Table.Row>
                         <Table.HeaderCell>Student ID</Table.HeaderCell>
                         <Table.HeaderCell>Name</Table.HeaderCell>
-                        <Table.HeaderCell>Status</Table.HeaderCell>
+						<Table.HeaderCell>Position Status</Table.HeaderCell>
+                        <Table.HeaderCell>Drop Status</Table.HeaderCell>
                     </Table.Row>
 
                     <Table.Row>
@@ -31,6 +33,9 @@ export function StudentList() {
                             <Label ribbon="left" color="purple" size="large">67</Label>
                         </Table.Cell>
                         <Table.Cell>Dan</Table.Cell>
+						<Table.Cell>
+							<PositionToggleButton />
+						</Table.Cell>
                         <Table.Cell>
                             <DropToggleButton />
                         </Table.Cell>
@@ -43,6 +48,9 @@ export function StudentList() {
                             <Label ribbon="left" color="purple" size="large">68</Label>
                         </Table.Cell>
                         <Table.Cell>Den</Table.Cell>
+						<Table.Cell>
+							<PositionToggleButton />
+						</Table.Cell>
                         <Table.Cell>
                             <DropToggleButton />
                         </Table.Cell>
@@ -55,6 +63,9 @@ export function StudentList() {
                             <Label ribbon="left" color="purple" size="large">69</Label>
                         </Table.Cell>
                         <Table.Cell>Din</Table.Cell>
+						<Table.Cell>
+							<PositionToggleButton />
+						</Table.Cell>
                         <Table.Cell>
                             <DropToggleButton />
                         </Table.Cell>
@@ -64,9 +75,12 @@ export function StudentList() {
                     <Table.Row>
 
                         <Table.Cell>
-                            <Label ribbon="left" color="purple" size="large">69.9</Label>
+                            <Label ribbon="left" color="purple" size="large">70</Label>
                         </Table.Cell>
                         <Table.Cell>Don</Table.Cell>
+						<Table.Cell>
+							<PositionToggleButton />
+						</Table.Cell>
                         <Table.Cell>
                             <DropToggleButton />
                         </Table.Cell>
