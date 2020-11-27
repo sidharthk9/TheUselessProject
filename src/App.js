@@ -24,6 +24,7 @@ import { AuthProvider } from "./Shared/Auth/AuthContext";
 import PrivateRoute from "./Shared/Auth/PrivateRoute";
 import {RegisterAdmins} from "./School/RegisterAdmins";
 import {LocationDeadline} from "./School/LocationDeadline";
+import {RegisterBus} from "./School/RegisterBus";
 
 
 const App = () => {
@@ -70,6 +71,8 @@ const App = () => {
                     <PrivateRoute exact path="/registermonitors" component={ RegisterMonitors } />
 
                     <PrivateRoute exact path="/registeradmins" component={ RegisterAdmins } />
+
+                    <PrivateRoute exact path="/registerbus" component={ RegisterBus } />
 
                     <PrivateRoute exact path="/personnelselection" component={ PersonnelSelection } />
 
