@@ -24,9 +24,9 @@ const ParentDetailsModal = (props) => {
             size={ "small" }
             dimmer={ "blurring" }
             trigger={
-                <Header.Content>
-                    { props.name }
-                </Header.Content>
+                <Button
+					content={ props.name }
+                />
             }
         >
             <Modal.Header>Parent Information</Modal.Header>
@@ -75,22 +75,6 @@ const ParentDetailsModal = (props) => {
                 </Modal.Description>
 
             </Modal.Content>
-
-            <Modal.Actions>
-                <Button color="grey" onClick={ () => setOpen(false) }>
-                    Cancel
-                </Button>
-                <Button
-                    content="Confirm"
-                    labelPosition="right"
-                    icon="checkmark"
-                    onClick={ () => setOpen(false) }
-                    positive
-
-                    as={ Link }
-                    to="/registerparents"
-                />
-            </Modal.Actions>
 
         </Modal>
     );

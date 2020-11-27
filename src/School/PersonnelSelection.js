@@ -25,7 +25,8 @@ export function PersonnelSelection() {
                     <Table.Header>
 
                         <Table.Row>
-                            <Table.HeaderCell>Bus Number</Table.HeaderCell>
+							<Table.HeaderCell>Bus Number</Table.HeaderCell>
+                            <Table.HeaderCell>Bus Capacity</Table.HeaderCell>
                             <Table.HeaderCell>Driver Name</Table.HeaderCell>
                             <Table.HeaderCell>Monitor Name</Table.HeaderCell>
                             <Table.HeaderCell>Status</Table.HeaderCell>
@@ -37,6 +38,7 @@ export function PersonnelSelection() {
 
                         <Table.Row>
                             <Table.Cell><BusSelectionModal number={ 67 } /></Table.Cell>
+							<Table.Cell>30</Table.Cell>
                             <Table.Cell><DriverSelectionModal /></Table.Cell>
                             <Table.Cell><MonitorSelectionModal /></Table.Cell>
                             <Table.Cell>
@@ -55,7 +57,8 @@ export function PersonnelSelection() {
 
                         <Table.Row>
                             <Table.Cell><BusSelectionModal number={ 68 } /></Table.Cell>
-                            <Table.Cell><DriverSelectionModal /></Table.Cell>
+							<Table.Cell>30</Table.Cell>
+							<Table.Cell><DriverSelectionModal /></Table.Cell>
                             <Table.Cell><MonitorSelectionModal /></Table.Cell>
                             <Table.Cell>
                                 <Button
@@ -73,7 +76,8 @@ export function PersonnelSelection() {
 
                         <Table.Row>
                             <Table.Cell><BusSelectionModal number={ 69 } /></Table.Cell>
-                            <Table.Cell><DriverSelectionModal /></Table.Cell>
+							<Table.Cell>30</Table.Cell>
+							<Table.Cell><DriverSelectionModal /></Table.Cell>
                             <Table.Cell><MonitorSelectionModal /></Table.Cell>
                             <Table.Cell>
                                 <Button

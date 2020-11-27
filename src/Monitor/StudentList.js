@@ -22,7 +22,8 @@ export function StudentList() {
 
                     <Table.Row>
                         <Table.HeaderCell>Student ID</Table.HeaderCell>
-                        <Table.HeaderCell>Name</Table.HeaderCell>
+						<Table.HeaderCell>Name</Table.HeaderCell>
+                        <Table.HeaderCell>Surname</Table.HeaderCell>
 						<Table.HeaderCell>Position Status</Table.HeaderCell>
                         <Table.HeaderCell>Drop Status</Table.HeaderCell>
                     </Table.Row>
@@ -33,6 +34,7 @@ export function StudentList() {
                             <Label ribbon="left" color="purple" size="large">67</Label>
                         </Table.Cell>
                         <Table.Cell>Dan</Table.Cell>
+						<Table.Cell>Lana</Table.Cell>
 						<Table.Cell>
 							<PositionToggleButton />
 						</Table.Cell>
@@ -48,6 +50,7 @@ export function StudentList() {
                             <Label ribbon="left" color="purple" size="large">68</Label>
                         </Table.Cell>
                         <Table.Cell>Den</Table.Cell>
+						<Table.Cell>Lena</Table.Cell>
 						<Table.Cell>
 							<PositionToggleButton />
 						</Table.Cell>
@@ -63,6 +66,7 @@ export function StudentList() {
                             <Label ribbon="left" color="purple" size="large">69</Label>
                         </Table.Cell>
                         <Table.Cell>Din</Table.Cell>
+						<Table.Cell>Lina</Table.Cell>
 						<Table.Cell>
 							<PositionToggleButton />
 						</Table.Cell>
@@ -78,6 +82,7 @@ export function StudentList() {
                             <Label ribbon="left" color="purple" size="large">70</Label>
                         </Table.Cell>
                         <Table.Cell>Don</Table.Cell>
+						<Table.Cell>Lona</Table.Cell>
 						<Table.Cell>
 							<PositionToggleButton />
 						</Table.Cell>

@@ -5,7 +5,7 @@ import { Button, Icon, Modal } from "semantic-ui-react";
 import "../../assets/semantic/dist/semantic.min.css";
 
 
-const BusSelectionModal = (props) => {
+const StudentSelectionModal = (props) => {
 	const [open, setOpen] = useState(false);
 
 	return(
@@ -27,10 +27,10 @@ const BusSelectionModal = (props) => {
 		>
 			<Modal.Header >
 				<Icon circular name="trash"/>
-				Bus Status
+				Student Status
 			</Modal.Header>
 
-			<Modal.Content>This Bus instance can be deleted here.</Modal.Content>
+			<Modal.Content>This Student field can be deleted here.</Modal.Content>
 
 			<Modal.Actions>
 				<Button
@@ -46,7 +46,7 @@ const BusSelectionModal = (props) => {
 					negative
 
 					as={ Link }
-					to="/personnelselection"
+					to="/addstudent"
 				/>
 			</Modal.Actions>
 
@@ -54,4 +54,4 @@ const BusSelectionModal = (props) => {
 	);
 }
 
-export default BusSelectionModal;
+export default StudentSelectionModal;

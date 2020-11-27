@@ -25,6 +25,7 @@ import PrivateRoute from "./Shared/Auth/PrivateRoute";
 import {RegisterAdmins} from "./School/RegisterAdmins";
 import {LocationDeadline} from "./School/LocationDeadline";
 import {RegisterBus} from "./School/RegisterBus";
+import {AddStudent} from "./School/RegisterStudents";
 
 
 const App = () => {
@@ -73,6 +74,8 @@ const App = () => {
                     <PrivateRoute exact path="/registeradmins" component={ RegisterAdmins } />
 
                     <PrivateRoute exact path="/registerbus" component={ RegisterBus } />
+
+                    <PrivateRoute exact path="/addstudent" component={ AddStudent } />
 
                     <PrivateRoute exact path="/personnelselection" component={ PersonnelSelection } />
 
