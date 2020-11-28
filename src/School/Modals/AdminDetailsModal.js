@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Header, Image, Modal, Table } from "semantic-ui-react";
+import { Button, Image, Modal, Table } from "semantic-ui-react";
 //Components
 import "../../assets/semantic/dist/semantic.min.css";
 import profileImage from "../../Static/Images/truePotato.png";
@@ -23,9 +23,7 @@ const AdminDetailsModal = (props) => {
 			size={ "small" }
 			dimmer={ "blurring" }
 			trigger={
-				<Header.Content>
-					{ props.name }
-				</Header.Content>
+				<Button	content={ props.name } />
 			}
 		>
 			<Modal.Header>Admin Information</Modal.Header>

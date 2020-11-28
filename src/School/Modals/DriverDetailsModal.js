@@ -23,9 +23,7 @@ const DriverDetailsModal = (props) => {
             size={ "small" }
             dimmer={ "blurring" }
             trigger={
-                <Header.Content>
-                    { props.name }
-                </Header.Content>
+				<Button	content={ props.name } />
             }
         >
             <Modal.Header>Driver Information</Modal.Header>

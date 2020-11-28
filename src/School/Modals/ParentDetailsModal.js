@@ -24,9 +24,7 @@ const ParentDetailsModal = (props) => {
             size={ "small" }
             dimmer={ "blurring" }
             trigger={
-                <Button
-					content={ props.name }
-                />
+                <Button	content={ props.name } />
             }
         >
             <Modal.Header>Parent Information</Modal.Header>
