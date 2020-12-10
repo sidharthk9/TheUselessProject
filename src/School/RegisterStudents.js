@@ -1,6 +1,6 @@
 import React from "react";
-import {Header, Table, Card, Divider, Icon, Container, Button, Segment} from "semantic-ui-react";
-import {Link} from "react-router-dom";
+import { Header, Table, Card, Divider, Icon, Container, Button, Segment } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 //Components
 import "../assets/semantic/dist/semantic.min.css";
 import StudentSelectionModal from "./Modals/StudentSelectionModal";
@@ -11,6 +11,7 @@ import StudentAdditionModal from "./Modals/StudentAdditionModal";
 export function AddStudent() {
 	return(
 		<Container textAlign="center" fluid>
+
 			<Divider horizontal>
 				<Header as="h4">
 					<Icon name="child" />
