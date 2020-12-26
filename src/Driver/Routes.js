@@ -11,13 +11,13 @@ const mapStyle = {
     height: "400px"
 };
 
+//Shitty regurgitated function for getting coordinates. That doesn't work. Make it work or ditch it.
 const locationOptions = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0
 };
 let center = {};
-
 navigator.geolocation.getCurrentPosition(
     (position) => {
         //Successful process
@@ -39,7 +39,7 @@ navigator.geolocation.getCurrentPosition(
 
 export function Routes() {
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY_FUCK_BUBBLEBOY,
         libraries
     });
 

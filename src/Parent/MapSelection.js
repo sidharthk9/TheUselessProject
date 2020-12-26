@@ -10,7 +10,12 @@ import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption 
 import "@reach/combobox/styles.css";
 import "../assets/semantic/dist/semantic.min.css";
 
-
+//Parameters
+const locationOptions = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
 const libraries = ["places"];
 const mapStyle = {
     width: "80vw",
@@ -18,13 +23,7 @@ const mapStyle = {
 };
 let center = {};
 
-//Parameters
-const locationOptions = {
-	enableHighAccuracy: true,
-	timeout: 5000,
-	maximumAge: 0
-};
-//Inherent function for getting coordinates
+//Shitty regurgitated function for getting coordinates
 navigator.geolocation.getCurrentPosition(
     (position) => {
         //Successful process
@@ -101,7 +100,7 @@ export function MapSelection() {
 
     //Google Maps Prerequisite
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY_FAKEDELETEWORDLATERAFTERTESTING,
         libraries
     });
 
@@ -144,7 +143,6 @@ export function MapSelection() {
     if(loadError) {
         alert("Map Loading Error");
     }
-
     if(!isLoaded) {
         return(
             <Container textAlign="center" fluid>
@@ -160,7 +158,6 @@ export function MapSelection() {
 
     return(
         <Container textAlign="center" fluid>
-
             <Divider horizontal>
                 <Header as="h4">
                     <Icon name="map marker" />

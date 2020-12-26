@@ -12,7 +12,6 @@ const mapStyle = {
     width: "80vw",
     height: "400px"
 };
-
 let center = {
     lat: 25.797877,
     lng: 55.946911,
@@ -25,7 +24,7 @@ export function FleetTracking() {
 
     //Google Maps Prerequisite
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY_FUCKBUBBLEBOY,
         libraries
     });
 
